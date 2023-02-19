@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
+.Header {
+    height: 10vh;
+    background-color: #f6e3e8;
+}
+
+.navbar {
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu {
+    display: flex;
+    width: 60%;
+    justify-content: space-around;
+}
+
+.menu li {
+    list-style-type: none;
+    width: 10em;
+    font-size: 22px;
+    font-weight: bold;
+    font-family: 'Indie Flower', cursive;
+
+}
+
+.menu li a:link,
+.menu li a:visited,
+.menu li a:hover,
+.menu li a:active {
+    text-decoration: none;
+    color: #bb5644;
+}
+
+.logo {
+    width: 20%;
+    margin-left: 5em
+}
+
+.search {
+    width: 20%;
+    margin-top: 1em;
+}
+
+.search input {
+    float: right;
+    margin-right: 1em
+}
