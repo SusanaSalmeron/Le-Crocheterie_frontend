@@ -14,41 +14,8 @@
     justify-content: space-between;
 }
 
-.elements,
-.logo,
-.search input {
-    margin-top: 1em;
-}
-
-.menu {
-    display: flex;
-    width: 60%;
-    justify-content: space-around;
-}
-
-.menu li {
-    list-style-type: none;
-    width: 9em;
-    font-size: 22px;
-    font-weight: bold;
-    font-family: 'Indie Flower', cursive;
-}
-
-.menu li a:link,
-.menu li a:visited,
-.menu li a:hover,
-.menu li a:active {
-    text-decoration: none;
-    color: #bb5644;
-}
-
-.menu li a:hover {
-    border-bottom: 4px solid #bb5644;
-}
-
 .logo {
     width: 20%;
-
 }
 
 .logo img {
@@ -56,7 +23,7 @@
 }
 
 .search {
-    width: 27%;
+    width: 25%;
     margin-top: 1em;
     position: relative;
 }
@@ -76,7 +43,7 @@
     display: inline-block;
     font-size: 20px;
     position: absolute;
-    top: 3px;
+    top: -9px;
     right: 0;
     padding: 18px 20px;
     z-index: 2;
