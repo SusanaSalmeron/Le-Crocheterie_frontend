@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 
 .Header {
-    height: 10vh;
+    height: 11vh;
     background-color: #f6e3e8;
 }
 
@@ -14,6 +14,12 @@
     justify-content: space-between;
 }
 
+.elements,
+.logo,
+.search input {
+    margin-top: 1em;
+}
+
 .menu {
     display: flex;
     width: 60%;
@@ -22,7 +28,7 @@
 
 .menu li {
     list-style-type: none;
-    width: 10em;
+    width: 9em;
     font-size: 22px;
     font-weight: bold;
     font-family: 'Indie Flower', cursive;
@@ -42,15 +48,45 @@
 
 .logo {
     width: 20%;
-    margin-left: 5em
+
+}
+
+.logo img {
+    width: 40%;
 }
 
 .search {
-    width: 20%;
+    width: 27%;
     margin-top: 1em;
+    position: relative;
 }
 
 .search input {
     float: right;
-    margin-right: 1em
+    margin-right: 1em;
+    width: 70%;
+    padding: 10px 30px 10px 10px;
+    display: block;
+}
+
+.search button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 20px;
+    position: absolute;
+    top: 3px;
+    right: 0;
+    padding: 18px 20px;
+    z-index: 2;
+}
+
+.search button i {
+    color: #bb5644;
+    font-size: larger;
+}
+
+.search input:focus+button .fa-search {
+    color: red;
 }
