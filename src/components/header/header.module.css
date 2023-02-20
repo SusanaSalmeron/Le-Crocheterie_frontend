@@ -26,7 +26,6 @@
     font-size: 22px;
     font-weight: bold;
     font-family: 'Indie Flower', cursive;
-
 }
 
 .menu li a:link,
@@ -35,6 +34,10 @@
 .menu li a:active {
     text-decoration: none;
     color: #bb5644;
+}
+
+.menu li a:hover {
+    border-bottom: 4px solid #bb5644;
 }
 
 .logo {
