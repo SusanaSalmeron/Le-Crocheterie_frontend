@@ -54,39 +54,3 @@
 .logo img {
     width: 40%;
 }
-
-.search {
-    width: 27%;
-    margin-top: 1em;
-    position: relative;
-}
-
-.search input {
-    float: right;
-    margin-right: 1em;
-    width: 70%;
-    padding: 10px 30px 10px 10px;
-    display: block;
-}
-
-.search button {
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    display: inline-block;
-    font-size: 20px;
-    position: absolute;
-    top: 3px;
-    right: 0;
-    padding: 18px 20px;
-    z-index: 2;
-}
-
-.search button i {
-    color: #bb5644;
-    font-size: larger;
-}
-
-.search input:focus+button .fa-search {
-    color: red;
-}

@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './header.module.css';
 import logo2 from '../../images/logo2.png';
+import SearchBar from '../searchBar/searchBar';
 
 
 interface HeaderProps { }
@@ -32,12 +33,7 @@ const Header: FC<HeaderProps> = () => {
           <div className={styles.logo}>
             <img alt="logo" src={logo2} />
           </div>
-          <div className={styles.search}>
-            <input type='text' name='search' placeholder='Search' />
-            <button>
-              <i className="fa-solid fa-magnifying-glass"></i>
-            </button>
-          </div>
+          <SearchBar />
         </div>
       </nav>
     </div>
