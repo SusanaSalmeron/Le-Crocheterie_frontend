@@ -5,14 +5,23 @@ import NavbarMenu from './navbarMenu';
 import { BrowserRouter } from 'react-router-dom';
 
 describe('<NavbarMenu />', () => {
-  test('it should mount', () => {
+  test('it should mount and show items in menu', async () => {
     render(
       <BrowserRouter>
         <NavbarMenu />
       </BrowserRouter>);
 
     const navbarMenu = screen.getByTestId('NavbarMenu');
-
     expect(navbarMenu).toBeInTheDocument();
+    const menu = screen.getByRole('list')
+    expect(menu).toBeInTheDocument()
+    const menuItems = screen.getAllByRole('listitem')
+    expect(menuItems).toHaveLength(4)
+    const links = screen.getAllByRole('link')
+    expect(links).toHaveLength(4)
+    expect(links[0]).toHaveAttribute('href', '/home')
+    expect(links[1]).toHaveAttribute('href', '/home')
+    expect(links[2]).toHaveAttribute('href', '/home')
+    expect(links[3]).toHaveAttribute('href', '/home')
   });
 });
