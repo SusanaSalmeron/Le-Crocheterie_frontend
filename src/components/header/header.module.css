@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
+.Header {
+    height: 11vh;
+    background-color: #f6e3e8;
+}
+
+.navbar {
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 20%;
+}
+
+.logo img {
+    width: 40%;
+}
