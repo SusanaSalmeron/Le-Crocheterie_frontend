@@ -13,7 +13,13 @@ describe('<Header />', () => {
     );
 
     const header = screen.getByTestId('Header');
-
     expect(header).toBeInTheDocument();
+    const menu = screen.getByTestId('NavbarMenu')
+    expect(menu).toBeInTheDocument()
+    const searchBar = screen.getByTestId("SearchBar")
+    expect(searchBar).toBeInTheDocument()
+    const logo = screen.getByRole('img')
+    expect(logo).toHaveAttribute('src', 'logo.png')
+
   });
 });

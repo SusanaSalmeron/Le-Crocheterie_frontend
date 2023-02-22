@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import styles from './header.module.css';
-import logo2 from '../../images/logo2.png';
+import logo from '../../images/logo.png';
 import SearchBar from '../searchBar/searchBar';
 import NavbarMenu from '../navbarMenu/navbarMenu';
 
@@ -14,7 +14,7 @@ const Header: FC<HeaderProps> = () => {
         <div className={styles.container}>
           <NavbarMenu />
           <div className={styles.logo}>
-            <img alt="logo" src={logo2} />
+            <img alt="logo" src={logo} />
           </div>
           <SearchBar />
         </div>
