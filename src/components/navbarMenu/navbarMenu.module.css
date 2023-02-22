@@ -1,0 +1,31 @@
+.elements,
+.logo,
+.search input {
+    margin-top: 1em;
+}
+
+.menu {
+    display: flex;
+    width: 60%;
+    justify-content: space-around;
+}
+
+.menu li {
+    list-style-type: none;
+    width: 9em;
+    font-size: 22px;
+    font-weight: bold;
+    font-family: 'Indie Flower', cursive;
+}
+
+.menu li a:link,
+.menu li a:visited,
+.menu li a:hover,
+.menu li a:active {
+    text-decoration: none;
+    color: #bb5644;
+}
+
+.menu li a:hover {
+    border-bottom: 4px solid #bb5644;
+}
