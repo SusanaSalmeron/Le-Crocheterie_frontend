@@ -1,0 +1,69 @@
+.sectionTypes {
+    height: 34vh;
+    background-color: #626262;
+    padding-top: 1em;
+
+}
+
+
+.categories {
+    display: flex;
+    justify-content: space-around;
+    display: flex;
+}
+
+.title h2 {
+    color: #fdfce9;
+    font-family: 'Indie Flower', cursive;
+    text-align: center;
+}
+
+.title {
+    margin-bottom: 4em;
+}
+
+.sectionTypes img {
+    height: 40%;
+}
+
+.categories figcaption {
+    color: #fdfce9;
+    margin: 1em 0 0 1.3em;
+}
+
+.sectionTypes img:hover {
+    animation: wiggle 2s linear infinite;
+}
+
+@keyframes wiggle {
+
+    0%,
+    7% {
+        transform: rotateZ(0);
+    }
+
+    15% {
+        transform: rotateZ(-15deg);
+    }
+
+    20% {
+        transform: rotateZ(10deg);
+    }
+
+    25% {
+        transform: rotateZ(-10deg);
+    }
+
+    30% {
+        transform: rotateZ(6deg);
+    }
+
+    35% {
+        transform: rotateZ(-4deg);
+    }
+
+    40%,
+    100% {
+        transform: rotateZ(0);
+    }
+}

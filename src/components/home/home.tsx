@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import HomeCarousel from '../homeCarousel/homeCarousel';
+import SectionTypes from '../sectionTypes/sectionTypes';
 
 import styles from './home.module.css';
 
@@ -32,7 +33,7 @@ const Home: FC<HomeProps> = () => (
       </section>
     </div>
     <div className={styles.types}>
-
+      <SectionTypes />
     </div>
   </div>
 );
