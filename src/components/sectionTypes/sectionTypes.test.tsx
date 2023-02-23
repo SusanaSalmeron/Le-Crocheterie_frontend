@@ -4,7 +4,7 @@ import '@testing-library/jest-dom/extend-expect';
 import SectionTypes from './sectionTypes';
 
 describe('<SectionTypes />', () => {
-  test('it should mount', () => {
+  test('it should show all categories selector images', () => {
     render(<SectionTypes />);
 
     const sectionTypes = screen.getByTestId('sectionTypes');
