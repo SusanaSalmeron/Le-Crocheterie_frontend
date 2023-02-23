@@ -8,7 +8,9 @@ describe('<Home />', () => {
     render(<Home />);
 
     const home = screen.getByTestId('Home');
-
     expect(home).toBeInTheDocument();
+    const carousel = screen.getByTestId('Carousel')
+    expect(carousel).toBeInTheDocument()
+
   });
 });
