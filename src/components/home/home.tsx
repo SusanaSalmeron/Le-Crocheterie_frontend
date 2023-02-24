@@ -16,7 +16,7 @@ const Home: FC<HomeProps> = () => {
         <section>
           <h3>100%
           </h3>
-          <h4>handmande</h4>
+          <h4>handmade</h4>
         </section>
         <section>
           <h3>
@@ -29,7 +29,7 @@ const Home: FC<HomeProps> = () => {
             100%
           </h3>
           <h4>
-            beneficent
+            charitable
           </h4>
         </section>
       </div>
