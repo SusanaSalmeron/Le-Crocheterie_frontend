@@ -1,0 +1,29 @@
+.home {
+    min-height: 100vh;
+    background-color: #f6e3e8;
+    margin-top: -1.4em;
+}
+
+.section {
+    margin-top: 4em;
+    height: 20vh;
+    width: 99.8%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.section h3 {
+    font-size: 3em;
+    margin-left: 3em;
+    margin-right: 3em;
+}
+
+.section h4 {
+    font-size: 1.2em;
+    margin-left: 1em;
+}
+
+.section section {
+    line-height: 0%;
+    font-family: 'Indie Flower', cursive;
+}
