@@ -12,9 +12,7 @@ function App() {
       <Routes>
         <Route path="/home" element={<Home />}></Route>
       </Routes>
-      <div className='footer'>
-        <Footer />
-      </div>
+      <Footer />
     </div>
   );
 }

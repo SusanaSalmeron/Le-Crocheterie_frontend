@@ -9,34 +9,36 @@ import cat5 from '../../images/cat5.png';
 
 interface SectionTypesProps { }
 
-const SectionTypes: FC<SectionTypesProps> = () => (
-  <div className={styles.sectionTypes} data-testid="sectionTypes">
-    <div className={styles.title}>
-      <h2>Category products</h2>
+const SectionTypes: FC<SectionTypesProps> = () => {
+  return (
+    <div className={styles.sectionTypes} data-testid="sectionTypes">
+      <div className={styles.title}>
+        <h2>Category products</h2>
+      </div>
+      <div className={styles.categories}>
+        <figure>
+          <img src={cat1} alt="animals" className={styles.category} />
+          <figcaption>Animals</figcaption>
+        </figure>
+        <figure>
+          <img src={cat2} alt="flowers" className={styles.category} />
+          <figcaption>Natura</figcaption>
+        </figure>
+        <figure>
+          <img src={cat3} alt="movies" className={styles.category} />
+          <figcaption>Movies</figcaption>
+        </figure>
+        <figure>
+          <img src={cat4} alt="people" className={styles.category} />
+          <figcaption>People</figcaption>
+        </figure>
+        <figure>
+          <img src={cat5} alt="objects" className={styles.category} />
+          <figcaption>Objects</figcaption>
+        </figure>
+      </div>
     </div>
-    <div className={styles.categories}>
-      <figure>
-        <img src={cat1} alt="animals" className={styles.category} />
-        <figcaption>Animals</figcaption>
-      </figure>
-      <figure>
-        <img src={cat2} alt="flowers" className={styles.category} />
-        <figcaption>Natura</figcaption>
-      </figure>
-      <figure>
-        <img src={cat3} alt="movies" className={styles.category} />
-        <figcaption>Movies</figcaption>
-      </figure>
-      <figure>
-        <img src={cat4} alt="people" className={styles.category} />
-        <figcaption>People</figcaption>
-      </figure>
-      <figure>
-        <img src={cat5} alt="objects" className={styles.category} />
-        <figcaption>Objects</figcaption>
-      </figure>
-    </div>
-  </div>
-);
+  )
+};
 
 export default SectionTypes;

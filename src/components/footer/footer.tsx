@@ -5,9 +5,10 @@ interface FooterProps { }
 
 const Footer: FC<FooterProps> = () => {
   const year: number = new Date().getFullYear();
-  return (<div className={styles.footer} data-testid="footer">
-    <footer>{`Copyright © Le Crocheterie ${year}`}</footer>
-  </div>
+  return (
+    <div className={styles.footer} data-testid="footer">
+      <footer>{`Copyright © Le Crocheterie ${year}`}</footer>
+    </div>
   )
 };
 
