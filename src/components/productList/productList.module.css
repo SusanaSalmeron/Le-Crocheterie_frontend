@@ -1,0 +1,18 @@
+.productList {
+    min-height: 100vh;
+    background-color: #f6e3e8;
+    margin-top: -3.4em;
+}
+
+.productList h1 {
+    font-family: 'Indie Flower', cursive;
+    font-size: 80px;
+    color: #bb5644;
+}
+
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+}
