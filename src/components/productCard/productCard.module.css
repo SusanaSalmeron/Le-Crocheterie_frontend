@@ -1,0 +1,45 @@
+.productCard {
+    width: 30%;
+    margin: 0 2em 1em 0;
+    padding-bottom: 2em;
+}
+
+.card figure {
+    position: relative;
+}
+
+.card img {
+    width: 400px;
+}
+
+.card button {
+    position: absolute;
+    border: 1px solid white;
+    border-radius: 50%;
+    padding: 0.5em;
+    margin-left: 0.3em;
+    font-size: 20px;
+    background-color: white;
+    color: #bb5644
+}
+
+.card button:hover {
+    border: 1px solid #bb5644;
+    border-radius: 50%;
+    padding: 0.5em;
+    margin-left: 0.3em;
+    font-size: 20px;
+    background-color: #bb5644;
+    color: white;
+}
+
+.data {
+    margin-left: 1em;
+    text-align: left;
+    font-family: 'Indie Flower', cursive;
+    font-size: 22px;
+}
+
+.productCard {
+    background-color: #f1dddd;
+}

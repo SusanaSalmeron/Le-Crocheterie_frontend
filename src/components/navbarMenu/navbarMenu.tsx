@@ -15,7 +15,7 @@ const NavbarMenu: FC<NavbarMenuProps> = () => {
             </Link>
           </li>
           <li>
-            <Link to="home">products</Link>
+            <Link to="/products">products</Link>
           </li>
           <li>
             <Link to="home">about</Link>
