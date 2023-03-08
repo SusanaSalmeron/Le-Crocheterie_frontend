@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import styles from './productCard.module.css';
+import { Link } from 'react-router-dom';
 
 interface ProductCardProps { }
 
@@ -17,7 +18,10 @@ const ProductCard: FC<ProductCardProps> = () => {
     <div className={styles.productCard} data-testid="productCard">
       <div className={styles.card}>
         <figure>
-          <img src='https://d1ccwz5tu7strp.cloudfront.net/1/main.jpg' alt="product" />
+          <Link to='/products/1/details'>
+            <img src='https://d1ccwz5tu7strp.cloudfront.net/1/main.jpg' alt="product" />
+          </Link>
+
           <button
             onMouseEnter={onEnter}
             onMouseLeave={onLeave}>
