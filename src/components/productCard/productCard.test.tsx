@@ -14,7 +14,7 @@ describe('<ProductCard />', () => {
     const productCard = screen.getByTestId('productCard');
     expect(productCard).toBeInTheDocument();
     const image = screen.getByRole('img')
-    expect(image).toHaveAttribute('src', 'https://d1ccwz5tu7strp.cloudfront.net/1/main.jpg')
+    expect(image).toHaveAttribute('src', 'https://d1ccwz5tu7strp.cloudfront.net/5/main.jpg')
     const button = screen.getByRole('button')
     const icon = screen.queryByTestId('icon')
     fireEvent.mouseEnter(button)
