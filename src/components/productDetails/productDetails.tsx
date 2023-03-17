@@ -1,75 +1,44 @@
-import React, { FC } from 'react';
+import { FC, useEffect, useState } from 'react';
 import styles from './productDetails.module.css';
-import { Formik, Form, Field } from 'formik';
+import DetailsForm from '../detailsForm/detailsForm';
+import { useParams } from 'react-router-dom';
+import { getProductBy } from '../../services/productsService';
 
 interface ProductDetailsProps { }
-
-interface InitialValues {
-  color: string;
-  size: string;
-  toggle: boolean;
-  total: number
+interface ProductProps {
+  id: number,
+  name: string,
+  material: string,
+  colors: string[],
+  description: string,
+  price: number
 }
 
-
-const initialValues: InitialValues = {
-  color: "",
-  size: "",
-  toggle: false,
-  total: 0
+type ProductParams = {
+  productId: string
 }
+
 
 const ProductDetails: FC<ProductDetailsProps> = () => {
+  const [product, setProduct] = useState<ProductProps>()
+  const { productId } = useParams<keyof ProductParams>() as ProductParams
+
+  useEffect(() => {
+    getProductBy(productId)
+      .then(response => {
+        setProduct(response)
+        console.log(productId)
+      })
+  }, [productId])
   return (<div className={styles.ProductDetails} data-testid="ProductDetails">
     <div className={styles.item}>
       <figure>
-        <img alt="rabbit" src={'https://d1ccwz5tu7strp.cloudfront.net/1/main.jpg'} />
+        <img alt="product" src={`https://d1ccwz5tu7strp.cloudfront.net/1/main.jpg`} />
       </figure>
       <div className={styles.details}>
         <h3>Rabbit</h3>
         <h4 className={styles.range}>15€ - 30€</h4>
-        <Formik
-          initialValues={initialValues}
-          onSubmit={(values, actions) => {
-            console.log({ values, actions });
-            alert(JSON.stringify(values, null, 2));
-          }}>
-          {({ values }) => (
-            <Form className={styles.form}>
-              <div className={styles.color}>
-                <label>Main color</label>
-                <Field as="select" name="color">
-                  <option >Choose color</option>
-                  <option value="pink" >Pink</option>
-                  <option value="blue">Blue</option>
-                  <option value="green">Green</option>
-                </Field>
-              </div>
-              <div className={styles.size}>
-                <label>Size</label>
-                <Field as="select" name="size">
-                  <option >Choose size</option>
-                  <option value="s">S</option>
-                  <option value="m">M</option>
-                  <option value="l">L</option>
-                </Field>
-              </div>
-              <div className={styles.wrapping}>
-                <label>
-                  Gift Wraping
-                  <Field type="checkbox" name="toggle" />
-                </label>
-              </div>
-              <div className={styles.total}>
-                <p>Total Price</p>
-                <p>{initialValues.total} €</p>
-              </div>
-              <div className={styles.button}>
-                <button type="submit">Submit</button>
-              </div>
-            </Form>
-          )}
-        </Formik>
+        <DetailsForm />
       </div>
     </div>
   </div>

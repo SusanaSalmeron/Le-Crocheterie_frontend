@@ -2,20 +2,35 @@ import axios from 'axios'
 
 
 const headers = {
-    'Content-Type': 'application/json',
-    "x-api-key": "Y7iRBcofzcaUq9PBZr2SB1k9rISDYnAa3EFYYf5c",
-    "Access-Control-Allow-Origin": "true"
+    "Content-Type": "application/json",
+    "x-api-key": "Y7iRBcofzcaUq9PBZr2SB1k9rISDYnAa3EFYYf5c"
 }
+
+const baseUrl = 'https://5bqtt27we5.execute-api.eu-central-1.amazonaws.com/dev/v1/products'
 
 
 export async function getAllProducts() {
-    let request = null
+    let products = null
     try {
-        const response = await axios.get('https://5bqtt27we5.execute-api.eu-central-1.amazonaws.com/dev/v1/products', { headers })
-        request = response.data
+        const response = await axios.get(baseUrl, { headers })
+        products = response.data
     } catch (err: any) {
         console.log('Error', err.message)
-        request = err.response
+        products = err.response
     }
-    return request
+    return products
+}
+
+export async function getProductBy(id: string) {
+    let product = null
+    const requestParams = { ...{ headers }, ...{ params: { id: id } } }
+    try {
+        const response = await axios.get(`${baseUrl}/${id}`, requestParams)
+        product = response.data
+    } catch (err: any) {
+        console.log('Error', err.message)
+        product = err.response
+    }
+    console.log(product)
+    return product
 }

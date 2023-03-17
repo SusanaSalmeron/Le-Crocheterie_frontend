@@ -2,10 +2,15 @@ import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import ProductCard from './productCard';
+import { BrowserRouter } from 'react-router-dom';
 
 describe('<ProductCard />', () => {
   test('it should mount', () => {
-    render(<ProductCard />);
+    render(
+      <BrowserRouter>
+        <ProductCard id={5} name={"Pochi"} price={20} />
+      </BrowserRouter>);
+
     const productCard = screen.getByTestId('productCard');
     expect(productCard).toBeInTheDocument();
     const image = screen.getByRole('img')

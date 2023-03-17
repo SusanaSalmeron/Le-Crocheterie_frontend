@@ -28,15 +28,8 @@ const ProductList: FC<ProductListProps> = () => {
     <div className={styles.productList} data-testid="productList">
       <h1>PRODUCTS</h1>
       <div className={styles.list}>
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
+        {products.map(product => <ProductCard id={product.id} name={product.name} price={product.price} />)}
       </div>
-
-
     </div>
   )
 };

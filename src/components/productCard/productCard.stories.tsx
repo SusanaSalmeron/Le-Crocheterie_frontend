@@ -5,7 +5,7 @@ export default {
   title: "ProductCard",
 };
 
-export const Default = () => <ProductCard />;
+export const Default = () => <ProductCard id={5} name={"Pochi"} price={20} />;
 
 Default.story = {
   name: 'default',
