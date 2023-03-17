@@ -2,6 +2,7 @@ import { FC, useEffect, useState } from 'react';
 import { getAllProducts } from '../../services/productsService';
 import ProductCard from '../productCard/productCard';
 import styles from './productList.module.css';
+import Spinner from '../spinner/spinner';
 
 interface ProductProps {
   id: number,
@@ -25,12 +26,15 @@ const ProductList: FC<ProductListProps> = () => {
   }, [])
 
   return (
-    <div className={styles.productList} data-testid="productList">
-      <h1>PRODUCTS</h1>
-      <div className={styles.list}>
-        {products.map(product => <ProductCard id={product.id} name={product.name} price={product.price} />)}
+    <>
+      {!products.length ? <Spinner /> : <div className={styles.productList} data-testid="productList">
+        <h1>PRODUCTS</h1>
+        <div className={styles.list}>
+          {products.map(product => <ProductCard id={product.id} name={product.name} price={product.price} />)}
+        </div>
       </div>
-    </div>
+      }
+    </>
   )
 };
 
