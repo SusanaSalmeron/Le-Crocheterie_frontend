@@ -8,7 +8,6 @@ describe('<Spinner />', () => {
     render(<Spinner />);
 
     const spinner = screen.getByTestId('spinner');
-
     expect(spinner).toBeInTheDocument();
   });
 });

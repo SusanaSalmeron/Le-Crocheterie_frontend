@@ -17,6 +17,7 @@ function App() {
         <Route path="/*" element={<Navigate to="/home" />} />
         <Route path="/products" element={<ProductList />} />
         <Route path="products/:productId/details" element={<ProductDetails />} />
+        <Route path="products/:category" element={<ProductList />} />
       </Routes>
       <Footer />
     </div>

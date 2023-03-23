@@ -8,7 +8,6 @@ interface ProductCardProps {
   price: number
 }
 
-
 const ProductCard: FC<ProductCardProps> = (props: ProductCardProps) => {
   const onEnter = (e: any) => {
     e.target.children[0].className = "fa-solid fa-heart"

@@ -20,23 +20,23 @@ type ProductParams = {
 
 
 const ProductDetails: FC<ProductDetailsProps> = () => {
-  const [product, setProduct] = useState<ProductProps>()
+  const [product, setProduct] = useState<ProductProps>({ id: 0, name: "", material: "", colors: [""], description: "", price: 0 })
   const { productId } = useParams<keyof ProductParams>() as ProductParams
 
   useEffect(() => {
     getProductBy(productId)
       .then(response => {
         setProduct(response)
-        console.log(productId)
       })
   }, [productId])
-  return (<div className={styles.ProductDetails} data-testid="ProductDetails">
+
+  return (<div className={styles.ProductDetails} data-testid="productDetails">
     <div className={styles.item}>
       <figure>
-        <img alt="product" src={`https://d1ccwz5tu7strp.cloudfront.net/1/main.jpg`} />
+        <img alt={product.name} src={`https://d1ccwz5tu7strp.cloudfront.net/${productId}/main.jpg`} />
       </figure>
       <div className={styles.details}>
-        <h3>Rabbit</h3>
+        <h3>{product.name}</h3>
         <h4 className={styles.range}>15€ - 30€</h4>
         <DetailsForm />
       </div>

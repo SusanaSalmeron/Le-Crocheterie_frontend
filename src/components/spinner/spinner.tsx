@@ -1,8 +1,9 @@
 import React, { FC, CSSProperties } from 'react';
 import styles from './spinner.module.css';
-import ClipLoader from "react-spinners/RiseLoader";
+import RiseLoader from "react-spinners/RiseLoader";
 
-interface SpinnerProps { }
+interface SpinnerProps {
+}
 
 const override: CSSProperties = {
   display: "block",
@@ -12,7 +13,7 @@ const override: CSSProperties = {
 const Spinner: FC<SpinnerProps> = () => {
   return (
     <div className={styles.Spinner} data-testid="spinner">
-      <ClipLoader
+      <RiseLoader
         cssOverride={override}
         color={"#bb5644"}
         size={80}
