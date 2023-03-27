@@ -15,39 +15,40 @@ const productsUrl = `${baseUrl}/products`
 
 
 export async function getAllProducts() {
+    return getProductsWith({})
+}
+
+export async function getProductsBy(categories: string) {
+    return getProductsWith({ categories })
+}
+
+async function getProductsWith(params: {}) {
     let products = null
+    const requestParams = { ...getHeaders(), ...{ params: params } }
     try {
-        const response = await axios.get(productsUrl, getHeaders())
+        const response = await axios.get(productsUrl, requestParams)
         products = response.data
     } catch (err: any) {
-        console.log('Error', err.message)
-        products = err.response
+        if (err.response.status === 404) {
+            products = []
+        } else {
+            console.log('Error when getting products by category ', err.message)
+        }
     }
-    return products ? products : []
+    return products
 }
 
 export async function getProductBy(id: string) {
     let product = null
     try {
         const response = await axios.get(`${productsUrl}/${id}`, getHeaders())
-        console.log(response)
         product = response.data
     } catch (err: any) {
-        console.log('Error', err.message)
-        product = err.response
+        if (err.response.status === 404) {
+            product = {}
+        } else {
+            console.log('Error when getting product by id', err.message)
+        }
     }
-    return product ? product : {}
-}
-
-export async function getProductsBy(categories: string) {
-    let products = null
-    const requestParams = { ...getHeaders(), ...{ params: { categories } } }
-    try {
-        const response = await axios.get(`${productsUrl}`, requestParams)
-        products = response.data
-    } catch (err: any) {
-        console.log('Error', err.message)
-        products = err.response
-    }
-    return products ? products : []
+    return product
 }

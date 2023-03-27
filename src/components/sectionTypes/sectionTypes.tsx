@@ -12,52 +12,34 @@ interface SectionTypesProps {
   onCategory: (e: any) => void
 }
 
+interface Category {
+  name: string,
+  image: string
+}
+const cats: Category[] = [
+  { name: "animals", image: cat1 },
+  { name: "nature", image: cat2 },
+  { name: "movies", image: cat3 },
+  { name: "people", image: cat4 },
+  { name: "fantasy", image: cat5 },
+  { name: "misc", image: cat6 }
+]
 
 const SectionTypes: FC<SectionTypesProps> = (props: SectionTypesProps) => {
-
-
   return (
     <div className={styles.sectionTypes} data-testid="sectionTypes">
       <div className={styles.title}>
         <h2>Category products</h2>
       </div>
       <div className={styles.categories}>
-        <figure>
-          <button onClick={props.onCategory} >
-            <img src={cat1} alt="animals" className={styles.category} />
-            <figcaption>Animals</figcaption>
-          </button>
-        </figure>
-        <figure>
-          <button onClick={props.onCategory}>
-            <img src={cat2} alt="nature" className={styles.category} />
-            <figcaption>Nature</figcaption>
-          </button>
-        </figure>
-        <figure>
-          <button onClick={props.onCategory}>
-            <img src={cat3} alt="movies" className={styles.category} />
-            <figcaption>Movies</figcaption>
-          </button>
-        </figure>
-        <figure>
-          <button onClick={props.onCategory}>
-            <img src={cat4} alt="people" className={styles.category} />
-            <figcaption>People</figcaption>
-          </button>
-        </figure>
-        <figure>
-          <button onClick={props.onCategory}>
-            <img src={cat5} alt="fantasy" className={styles.category} />
-            <figcaption>Fantasy</figcaption>
-          </button>
-        </figure>
-        <figure>
-          <button onClick={props.onCategory}>
-            <img src={cat6} alt="misc" className={styles.category} />
-            <figcaption>Misc</figcaption>
-          </button>
-        </figure>
+        {cats.map((cat, i) => {
+          return <figure key={i}>
+            <button onClick={props.onCategory} >
+              <img src={cat.image} alt={cat.name} className={styles.category} />
+              <figcaption>{cat.name}</figcaption>
+            </button>
+          </figure>
+        })}
       </div>
     </div>
   )
