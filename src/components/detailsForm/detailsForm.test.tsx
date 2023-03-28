@@ -5,7 +5,7 @@ import DetailsForm from './detailsForm';
 
 describe('<DetailsForm />', () => {
   test('sould show form correctly', () => {
-    render(<DetailsForm />);
+    render(<DetailsForm id={5} material="cotton" colors={"pink/blue"} />);
     const detailsForm = screen.getByTestId('detailsForm');
     expect(detailsForm).toBeInTheDocument();
     const selects = screen.getAllByRole('combobox')

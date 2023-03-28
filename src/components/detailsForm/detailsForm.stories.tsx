@@ -5,7 +5,7 @@ export default {
   title: "DetailsForm",
 };
 
-export const Default = () => <DetailsForm />;
+export const Default = () => <DetailsForm id={5} material={"cotton"} colors={"pink/blue"} />;
 
 Default.story = {
   name: 'default',

@@ -3,23 +3,29 @@ import styles from './detailsForm.module.css';
 import { Formik, Form, Field } from 'formik';
 
 
-interface DetailsFormProps { }
+interface DetailsFormProps {
+  id: number,
+  material: string,
+  colors: string,
+}
 
 interface InitialValues {
-  color: string;
+  colors: string;
   size: string;
   toggle: boolean;
   total: number
 }
 
 const initialValues: InitialValues = {
-  color: "",
+  colors: "",
   size: "",
   toggle: false,
   total: 0
 }
 
-const DetailsForm: FC<DetailsFormProps> = () => {
+const DetailsForm: FC<DetailsFormProps> = (props: DetailsFormProps) => {
+  const optionsColors: string[] = props.colors.split("|")
+
   return (
     <div className={styles.DetailsForm} data-testid="detailsForm">
       <Formik
@@ -34,9 +40,9 @@ const DetailsForm: FC<DetailsFormProps> = () => {
               <label>Main color</label>
               <Field as="select" name="color">
                 <option >Choose color</option>
-                <option value="pink" >Pink</option>
-                <option value="blue">Blue</option>
-                <option value="green">Green</option>
+                {optionsColors.map((color, i) => {
+                  return <option key={i} value={color} >{color}</option>
+                })}
               </Field>
             </div>
             <div className={styles.size}>

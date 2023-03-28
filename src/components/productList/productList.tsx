@@ -30,7 +30,6 @@ const ProductList: FC<ProductListProps> = () => {
     if (!category) {
       getAllProducts()
         .then(response => {
-          console.log(response)
           setProducts(response)
           setLoading(false)
         })
