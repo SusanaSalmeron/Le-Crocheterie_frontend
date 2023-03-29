@@ -29,7 +29,7 @@ async function getProductsWith(params: {}) {
         const response = await axios.get(productsUrl, requestParams)
         products = response.data
     } catch (err: any) {
-        if (err.response.status === 404) {
+        if (err.response?.status === 404) {
             products = []
         } else {
             console.log('Error when getting products by category ', err.message)
@@ -44,7 +44,7 @@ export async function getProductBy(id: string) {
         const response = await axios.get(`${productsUrl}/${id}`, getHeaders())
         product = response.data
     } catch (err: any) {
-        if (err.response.status === 404) {
+        if (err.response?.status === 404) {
             product = {}
         } else {
             console.log('Error when getting product by id', err.message)

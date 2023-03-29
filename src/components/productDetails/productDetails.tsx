@@ -8,8 +8,8 @@ interface ProductDetailsProps { }
 interface ProductProps {
   id: number,
   name: string,
-  material: string,
-  colors: string,
+  material: string[],
+  colors: string[],
   description: string,
   price: number
 }
@@ -20,7 +20,7 @@ type ProductParams = {
 
 
 const ProductDetails: FC<ProductDetailsProps> = () => {
-  const [product, setProduct] = useState<ProductProps>({ id: 0, name: "", material: "", colors: "", description: "", price: 0 })
+  const [product, setProduct] = useState<ProductProps>({ id: 0, name: "", material: [""], colors: [""], description: "", price: 0 })
   const { productId } = useParams<keyof ProductParams>() as ProductParams
 
   useEffect(() => {
@@ -38,7 +38,7 @@ const ProductDetails: FC<ProductDetailsProps> = () => {
       <div className={styles.details}>
         <h3>{product.name}</h3>
         <h4 className={styles.range}>15€ - 30€</h4>
-        <DetailsForm id={product.id} material={product.material} colors={product.colors} />
+        <DetailsForm id={product.id} colors={product.colors} />
       </div>
     </div>
   </div>

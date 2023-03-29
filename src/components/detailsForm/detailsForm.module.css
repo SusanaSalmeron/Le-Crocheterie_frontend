@@ -26,6 +26,11 @@
     float: right;
     background-color: #f6e3e8;
     font-size: 1em;
+
+}
+
+.color select option::first-letter {
+    text-transform: uppercase;
 }
 
 .wrapping input {
@@ -41,7 +46,7 @@
 
 .button button {
     width: 50%;
-    margin: 1em 0 0 3em;
+    margin: 2em 0 1em 3em;
     padding: 1em;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 1.2em;
