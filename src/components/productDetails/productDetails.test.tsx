@@ -1,6 +1,7 @@
 import { render, screen, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import ProductDetails from './productDetails';
+import { BrowserRouter } from 'react-router-dom';
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
@@ -14,7 +15,10 @@ describe('<ProductDetails />', () => {
   test('it should show product details correctly', async () => {
     jest.spyOn(productService, 'getProductBy').mockResolvedValueOnce({ id: 5, name: "Pochi", material: "cotton", colors: ["pink"], description: "asdfghj", price: 15 })
 
-    render(<ProductDetails />);
+    render(
+      <BrowserRouter>
+        <ProductDetails />
+      </BrowserRouter>);
 
     const productDetails = screen.getByTestId('productDetails');
     expect(productDetails).toBeInTheDocument();

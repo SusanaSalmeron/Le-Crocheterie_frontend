@@ -30,8 +30,6 @@ const initialValues: InitialValues = {
   total: 0
 }
 
-
-
 const DetailsForm: FC<DetailsFormProps> = (props: DetailsFormProps) => {
   const [catalogs, setCatalogs] = useState<Catalogs>({ colors: initialValues.colors, materials: [""], sizes: initialValues.sizes })
   const [price, setPrice] = useState<number>(0)
@@ -52,7 +50,6 @@ const DetailsForm: FC<DetailsFormProps> = (props: DetailsFormProps) => {
   }
 
   const addWrappingPrice = (e: any) => {
-    console.log(e.currentTarget.value)
     if (e.currentTarget.value) {
       setchecked(!checked)
     }

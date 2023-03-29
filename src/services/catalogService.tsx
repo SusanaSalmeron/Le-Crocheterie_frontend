@@ -25,13 +25,5 @@ export async function getCatalogs() {
             console.log('Error when getting catalogs', err.message)
         }
     }
-
-    /* const sizes: string[] = Object.keys(catalogs.sizes)
-    console.log(catalogs.sizes)
-    console.log(sizes)
-    for (let size of sizes) {
-        console.log(size)
-        console.log(catalogs.sizes[size])
-    } */
     return catalogs
 }
