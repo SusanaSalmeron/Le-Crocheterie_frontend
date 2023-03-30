@@ -5,7 +5,7 @@ const getHeaders = () => {
     return {
         headers: {
             "Content-Type": "application/json",
-            "x-api-key": "Y7iRBcofzcaUq9PBZr2SB1k9rISDYnAa3EFYYf5c"
+            "x-api-key": process.env.REACT_APP_API_KEY
         }
     }
 }

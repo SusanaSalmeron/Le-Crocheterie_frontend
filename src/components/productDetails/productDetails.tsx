@@ -3,6 +3,7 @@ import styles from './productDetails.module.css';
 import DetailsForm from '../detailsForm/detailsForm';
 import { useParams } from 'react-router-dom';
 import { getProductBy } from '../../services/productsService';
+import { getCatalogs } from '../../services/catalogService';
 
 interface ProductDetailsProps { }
 interface ProductProps {
@@ -18,9 +19,16 @@ type ProductParams = {
   productId: string
 }
 
+interface Catalogs {
+  colors: string[];
+  materials: string[]
+  sizes: {}
+}
+
 
 const ProductDetails: FC<ProductDetailsProps> = () => {
   const [product, setProduct] = useState<ProductProps>({ id: 0, name: "", material: [""], colors: [""], description: "", price: 0 })
+  const [catalogs, setCatalogs] = useState<Catalogs>({ colors: [], materials: [], sizes: {} })
   const { productId } = useParams<keyof ProductParams>() as ProductParams
 
   useEffect(() => {
@@ -28,7 +36,15 @@ const ProductDetails: FC<ProductDetailsProps> = () => {
       .then(response => {
         setProduct(response)
       })
+    getCatalogs()
+      .then(response => {
+        setCatalogs(response)
+      })
   }, [productId])
+
+  const prices: any = Object.values(catalogs.sizes)
+  const maxPrice = Math.max(...prices)
+  const minPrice = Math.min(...prices)
 
   return (<div className={styles.ProductDetails} data-testid="productDetails">
     <div className={styles.item}>
@@ -37,7 +53,7 @@ const ProductDetails: FC<ProductDetailsProps> = () => {
       </figure>
       <div className={styles.details}>
         <h3>{product.name}</h3>
-        <h4 className={styles.range}>15€ - 30€</h4>
+        <h4 className={styles.range}>{minPrice}€ - {maxPrice}€</h4>
         <DetailsForm id={product.id} colors={product.colors} />
       </div>
     </div>
