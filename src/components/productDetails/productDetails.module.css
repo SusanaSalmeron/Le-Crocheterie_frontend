@@ -1,0 +1,35 @@
+.ProductDetails {
+    height: 100vh;
+    background-color: #f6e3e8;
+    margin-top: -1em;
+}
+
+.item {
+    display: flex;
+    width: 100%;
+}
+
+.item img {
+    width: 75%;
+}
+
+.details {
+    background-color: #f9f0f2;
+    width: 50%;
+    margin: 1em 2em 0 0;
+}
+
+.details h4 {
+    margin-bottom: 4em;
+
+}
+
+.details p {
+    text-align: left;
+    margin-left: 2em;
+}
+
+.details h3 {
+    font-size: 2em;
+    font-family: 'Indie Flower', cursive;
+}

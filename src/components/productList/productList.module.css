@@ -16,3 +16,9 @@
     flex-direction: row;
     justify-content: center;
 }
+
+.productList h2 {
+    padding-top: 15em;
+    text-transform: uppercase;
+    color: #bb5644
+}

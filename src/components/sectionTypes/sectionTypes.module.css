@@ -25,9 +25,23 @@
     height: 40%;
 }
 
+.categories figure {
+    width: 100%;
+}
+
 .categories figcaption {
     color: #fdfce9;
     margin-top: 1em;
+}
+
+.categories button {
+    background-color: transparent;
+    border: none;
+    width: 100%;
+}
+
+.categories button img {
+    width: 40%;
 }
 
 .sectionTypes img:hover {

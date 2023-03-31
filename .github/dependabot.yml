@@ -1,0 +1,18 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    target-branch:  "develop"
+    allow:
+    - dependency-type: "direct"
+    commit-message:
+      prefix: "npm"
+      include: "scope"
+    labels:
+      - "npm"
+      - "dependencies"
+    open-pull-request-limit: 2
+    
+
