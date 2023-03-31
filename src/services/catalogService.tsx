@@ -1,22 +1,12 @@
 import axios from 'axios';
+import { getAuthHeaders } from './clientUtils';
 
-const getHeaders = () => {
-    return {
-        headers: {
-            "Content-Type": "application/json",
-            "x-api-key": process.env.REACT_APP_API_KEY
-        }
-    }
-}
-
-const baseUrl = 'https://5bqtt27we5.execute-api.eu-central-1.amazonaws.com/dev/v1'
-const catalogsUrl = `${baseUrl}/catalogs`
-
+const catalogsUrl = `${process.env.REACT_APP_BASE_URL}/catalogs`
 
 export async function getCatalogs() {
     let catalogs = null
     try {
-        const response = await axios.get(catalogsUrl, getHeaders())
+        const response = await axios.get(catalogsUrl, getAuthHeaders())
         catalogs = response.data
     } catch (err: any) {
         if (err.response?.status === 404) {

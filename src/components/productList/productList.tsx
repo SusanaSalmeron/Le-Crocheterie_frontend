@@ -40,12 +40,12 @@ const ProductList: FC<ProductListProps> = () => {
           setLoading(false)
         })
     }
-  }, [category, products])
+  }, [category])
 
   return (
     <>
       {loading ? <Spinner /> : <div className={styles.productList} data-testid="productList">
-        {!products.length ? <h2>No products in this category</h2> : <>
+        {!products?.length ? <h2>No products in this category</h2> : <>
           <h1>PRODUCTS</h1>
           <div className={styles.list}>
             {products.map((product, i) => <ProductCard key={i} id={product.id} name={product.name} price={product.price} />)}

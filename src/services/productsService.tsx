@@ -1,18 +1,7 @@
 import axios from 'axios'
+import { getAuthHeaders } from './clientUtils'
 
-
-const getHeaders = () => {
-    return {
-        headers: {
-            "Content-Type": "application/json",
-            "x-api-key": process.env.REACT_APP_API_KEY
-        }
-    }
-}
-
-const baseUrl = 'https://5bqtt27we5.execute-api.eu-central-1.amazonaws.com/dev/v1'
-const productsUrl = `${baseUrl}/products`
-
+const productsUrl = `${process.env.REACT_APP_BASE_URL}/products`
 
 export async function getAllProducts() {
     return getProductsWith({})
@@ -24,9 +13,10 @@ export async function getProductsBy(categories: string) {
 
 async function getProductsWith(params: {}) {
     let products = null
-    const requestParams = { ...getHeaders(), ...{ params: params } }
+    const requestParams = { ...getAuthHeaders(), ...{ params: params } }
     try {
         const response = await axios.get(productsUrl, requestParams)
+        console.log(response)
         products = response.data
     } catch (err: any) {
         if (err.response?.status === 404) {
@@ -41,7 +31,7 @@ async function getProductsWith(params: {}) {
 export async function getProductBy(id: string) {
     let product = null
     try {
-        const response = await axios.get(`${productsUrl}/${id}`, getHeaders())
+        const response = await axios.get(`${productsUrl}/${id}`, getAuthHeaders())
         product = response.data
     } catch (err: any) {
         if (err.response?.status === 404) {
