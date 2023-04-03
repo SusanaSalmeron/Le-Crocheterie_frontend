@@ -60,48 +60,46 @@ const DetailsForm: FC<DetailsFormProps> = (props: DetailsFormProps) => {
       <Formik
         initialValues={initialValues}
         onSubmit={() => {
-          navigate('/home')
+          navigate('/contact')
         }}>
-        {({ values }) => (
-          <Form className={styles.form}>
-            <div className={styles.color}>
-              <label>Main color</label>
-              <Field as="select" name="color">
-                <option >Choose color</option>
-                {props.colors.map((color, i) => {
-                  return <option key={i} value={color} >{color.toUpperCase()}</option>
-                })}
-              </Field>
-            </div>
-            <div className={styles.size}>
-              <label>Size</label>
-              <Field as="select" name="size" onChange={changePrice}>
-                <option >Choose size</option>
-                {Object.keys(catalogs.sizes).map((size, i) => {
-                  return <option key={i} value={size}>{size.toUpperCase()}</option>
-                }).reverse()}
-              </Field>
-            </div>
-            <div className={styles.wrapping}>
-              <label>
-                Gift Wraping
-                <Field type="checkbox" name="toggle" onClick={addWrappingPrice} />
-              </label>
-            </div>
-            <div className={styles.total}>
-              <p>Total Price</p>
-              <p>{checked ? price + 5 : price} €</p>
-            </div>
-            <div>
-              <p>This form is only for info purpose. If you want to order or ask something, please click contact button below</p>
-            </div>
-            <div className={styles.button}>
-              <button type="submit">Contact</button>
-            </div>
-          </Form>
-        )}
-      </Formik>
 
+        <Form className={styles.form}>
+          <div className={styles.color}>
+            <label>Main color</label>
+            <Field as="select" name="color">
+              <option >Choose color</option>
+              {props.colors.map((color, i) => {
+                return <option key={i} value={color} >{color.toUpperCase()}</option>
+              })}
+            </Field>
+          </div>
+          <div className={styles.size}>
+            <label>Size</label>
+            <Field as="select" name="size" onChange={changePrice}>
+              <option >Choose size</option>
+              {Object.keys(catalogs.sizes).map((size, i) => {
+                return <option key={i} value={size}>{size.toUpperCase()}</option>
+              }).reverse()}
+            </Field>
+          </div>
+          <div className={styles.wrapping}>
+            <label>
+              Gift Wraping
+              <Field type="checkbox" name="toggle" onClick={addWrappingPrice} />
+            </label>
+          </div>
+          <div className={styles.total}>
+            <p>Total Price</p>
+            <p>{checked ? price + 5 : price} €</p>
+          </div>
+          <div>
+            <p>This form is only for info purpose. If you want to order or ask something, please click contact button below</p>
+          </div>
+          <div className={styles.button}>
+            <button type="submit">Contact</button>
+          </div>
+        </Form>
+      </Formik>
     </div>
   )
 };

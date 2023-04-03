@@ -21,7 +21,7 @@ const NavbarMenu: FC<NavbarMenuProps> = () => {
             <Link to="home">about</Link>
           </li>
           <li>
-            <Link to="home">contact</Link>
+            <Link to="/contact">contact</Link>
           </li>
         </ul>
       </div>

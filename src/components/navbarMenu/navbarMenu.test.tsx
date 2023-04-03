@@ -22,6 +22,6 @@ describe('<NavbarMenu />', () => {
     expect(links[0]).toHaveAttribute('href', '/home')
     expect(links[1]).toHaveAttribute('href', '/products')
     expect(links[2]).toHaveAttribute('href', '/home')
-    expect(links[3]).toHaveAttribute('href', '/home')
+    expect(links[3]).toHaveAttribute('href', '/contact')
   });
 });
