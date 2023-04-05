@@ -1,18 +1,20 @@
-.elements,
-.logo,
-.search input {
-    margin-top: 1em;
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
 .menu {
+    width: 100%;
     display: flex;
-    width: 60%;
-    justify-content: space-around;
+    flex-direction: row;
+    margin-top: 1em;
 }
 
 .menu li {
     list-style-type: none;
-    width: 9em;
+    width: 5em;
+    margin-right: 2em;
     font-size: 22px;
     font-weight: bold;
     font-family: 'Indie Flower', cursive;
@@ -28,4 +30,31 @@
 
 .menu li a:hover {
     border-bottom: 4px solid #bb5644;
+}
+
+@media (max-width: 1199.98px) {
+    .menu li {
+        width: 3em;
+        margin-right: 1.5em;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .menu li {
+        width: 3em;
+        margin-right: 1.5em;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .menu {
+        width: 90%;
+    }
+
+    .menu li {
+        width: 2.3em;
+        margin-right: 2em;
+        font-size: 18px;
+    }
 }

@@ -1,35 +1,60 @@
-.search {
-    width: 25%;
-    margin-top: 1em;
-    position: relative;
+.searchBar {
+    width: 20%;
+    margin-top: 1.5em;
 }
 
-.search input {
+.searchBar input {
     float: right;
-    margin-right: 1em;
-    width: 70%;
+    width: 100%;
     padding: 10px 30px 10px 10px;
     display: block;
 }
 
-.search button {
+.searchBar button {
     background: transparent;
     border: none;
     cursor: pointer;
     display: inline-block;
     font-size: 20px;
     position: absolute;
-    top: -10px;
-    right: 0;
+    top: 15px;
+    right: 80px;
     padding: 18px 20px;
     z-index: 2;
 }
 
-.search button i {
-    color: #bb5644;
-    font-size: larger;
+@media (max-width: 1199.98px) {
+    .searchBar button {
+        right: 40px;
+    }
 }
 
-.search input:focus+button .fa-search {
-    color: red;
+@media (max-width: 991.98px) {
+    .searchBar button {
+        right: 20px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .searchBar input {
+        padding: 6px 30px 6px 10px;
+    }
+
+    .searchBar button {
+        top: 10px;
+        right: -5px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .searchBar input {
+        padding: 6px 30px 6px 10px;
+    }
+
+    .searchBar button {
+        top: 11px;
+        right: -10px;
+        font-size: 18px;
+    }
+
 }

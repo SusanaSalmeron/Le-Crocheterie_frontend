@@ -57,11 +57,11 @@ const ContactForm: FC<ContactFormProps> = () => {
               />
               <div className={styles.topic}>
                 <label>Subject</label>
-                <Field as="select" name="topic" >
-                  <option >Choose subject</option>
-                  <option >Order</option>
-                  <option >Support</option>
-                  <option >General</option>
+                <Field as="select" name="topic">
+                  <option>Choose subject</option>
+                  <option>Order</option>
+                  <option>Support</option>
+                  <option>General</option>
                 </Field>
               </div>
               <ErrorMessage

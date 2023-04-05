@@ -1,26 +1,24 @@
 import React, { FC } from 'react';
-import styles from './homeCarousel.module.css';
-import Carousel from 'nuka-carousel';
+import './homeCarousel.css';
+import { Carousel } from 'react-responsive-carousel'
 import banner1 from '../../images/banner1.png';
 import banner2 from '../../images/banner2.png';
 
 interface HomeCarouselProps { }
 
 const HomeCarousel: FC<HomeCarouselProps> = () => {
-  const controls = {
-    nextButtonText: <i className="fa-solid fa-arrow-right"></i>,
-    prevButtonText: <i className="fa-solid fa-arrow-left"></i>,
-    pagingDotsStyle: {
-      fill: '#bb5644'
-    },
-  }
-
-  return (<div className={styles.Carousel} data-testid="Carousel">
-    <Carousel animation="fade" autoplay={true} autoplayInterval={5000} wrapAround={true} defaultControlsConfig={controls}>
-      <img src={banner1} alt="banner1" />
-      <img src={banner2} alt="banner2" />
-    </Carousel>
-  </div>
+  return (
+    <div className="Carousel" data-testid="Carousel">
+      <Carousel autoPlay={true} infiniteLoop={true} centerMode={true} centerSlidePercentage={100}
+        showThumbs={false}>
+        <div>
+          <img src={banner1} alt="banner1" />
+        </div>
+        <div>
+          <img src={banner2} alt="banner2" />
+        </div>
+      </Carousel>
+    </div>
   )
 };
 

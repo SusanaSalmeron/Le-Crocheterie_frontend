@@ -1,13 +1,16 @@
 import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './navbarMenu.module.css';
+import useMedia from '../../hooks/useMedia'
 
 interface NavbarMenuProps { }
 
 const NavbarMenu: FC<NavbarMenuProps> = () => {
+  const isMobile = useMedia('(max-width: 500px)')
   return (
-    <div className={styles.NavbarMenu} data-testid="NavbarMenu">
-      <div className={styles.elements}>
+
+    <nav className={styles.navbar} data-testid="NavbarMenu">
+      <div className={styles.menu} >
         <ul className={styles.menu}>
           <li>
             <Link to="home">
@@ -20,12 +23,12 @@ const NavbarMenu: FC<NavbarMenuProps> = () => {
           <li>
             <Link to="home">about</Link>
           </li>
-          <li>
+          {!isMobile ? <li>
             <Link to="/contact">contact</Link>
-          </li>
+          </li> : null}
         </ul>
       </div>
-    </div>
+    </nav>
   )
 };
 

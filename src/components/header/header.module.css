@@ -2,22 +2,40 @@
 
 .Header {
     height: 11vh;
+    max-width: 100%;
     background-color: #f6e3e8;
-}
-
-.navbar {
-    width: 100%;
-}
-
-.container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
-.logo {
-    width: 20%;
+@media (max-width: 1199.98px) {
+    .logo {
+        width: auto;
+        height: 80px;
+    }
+
+    .logo img {
+        margin-top: 1em;
+        width: 70%;
+    }
 }
 
-.logo img {
-    width: 40%;
+@media (max-width: 991.98px) {
+    .logo img {
+        margin-top: 1em;
+        width: 50%;
+    }
+
+}
+
+@media (max-width: 575.98px) {
+    .logo {
+        width: 30%;
+        margin-top: 0.6em
+    }
+
+    .logo img {
+        margin-top: 1em;
+        width: 40%;
+    }
 }

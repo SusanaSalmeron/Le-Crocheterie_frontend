@@ -3,3 +3,9 @@
     padding-top: 2em;
     background-color: #f6e3e8;
 }
+
+@media (max-width: 1199.98px) {
+    .footer {
+        min-height: 10px;
+    }
+}

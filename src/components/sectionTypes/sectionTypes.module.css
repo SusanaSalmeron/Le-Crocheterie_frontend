@@ -8,7 +8,6 @@
 .categories {
     display: flex;
     justify-content: space-around;
-    display: flex;
 }
 
 .title h2 {
@@ -78,5 +77,41 @@
     40%,
     100% {
         transform: rotateZ(0);
+    }
+}
+
+
+@media (max-width: 1199.98px) {
+    .sectionTypes {
+        height: 20vh;
+    }
+
+    .title {
+        margin-bottom: 2em;
+    }
+}
+
+
+@media (max-width: 767.98px) {
+    .sectionTypes {
+        height: 45vh;
+    }
+
+    .categories {
+        display: grid;
+        grid-template-columns: repeat(3, 3fr);
+
+    }
+
+    .category {
+        margin-top: 3em;
+    }
+
+    .categories figure {
+        width: 100%;
+    }
+
+    .sectionTypes img {
+        height: 100%;
     }
 }
