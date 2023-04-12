@@ -41,6 +41,7 @@
 .total {
     display: flex;
     justify-content: center;
+    margin-bottom: 2em;
 }
 
 .button button {
@@ -58,4 +59,34 @@
     background-color: white;
     color: #bb5644;
     border: 1px solid #bb5644
+}
+
+
+@media (max-width: 767.98px) {}
+
+
+@media (max-width: 575.98px) {
+    .form {
+        width: 100%;
+    }
+
+    .form label,
+    .total {
+        font-size: 1.2em;
+    }
+
+    .color select,
+    .size select {
+        font-size: 1em;
+        margin-right: 1em;
+    }
+
+    .wrapping input {
+        margin-right: 1.5em;
+
+    }
+
+    .button button {
+        margin: 2em 3em 1em 3em;
+    }
 }

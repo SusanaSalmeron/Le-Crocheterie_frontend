@@ -25,17 +25,16 @@
         margin-top: 1em;
         width: 50%;
     }
-
 }
 
 @media (max-width: 575.98px) {
     .logo {
-        width: 30%;
-        margin-top: 0.6em
+        width: 20%;
+        margin-top: 0.6em;
     }
 
     .logo img {
         margin-top: 1em;
-        width: 40%;
+        width: 80%;
     }
 }

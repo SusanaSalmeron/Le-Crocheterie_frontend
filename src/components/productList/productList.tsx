@@ -44,7 +44,7 @@ const ProductList: FC<ProductListProps> = () => {
 
   return (
     <>
-      {loading ? <Spinner /> : <div className={styles.productList} data-testid="productList">
+      {loading ? <Spinner size={30} /> : <div className={styles.productList} data-testid="productList">
         {!products?.length ? <h2>No products in this category</h2> : <>
           <h1>PRODUCTS</h1>
           <div className={styles.list}>

@@ -32,7 +32,7 @@ section h4 {
 @media (max-width: 1199.98px) {
     .section {
         margin: 5em 0 0 0;
-        height: 20vh;
+        height: 17vh;
         width: 100%;
         display: flex;
     }
@@ -57,11 +57,25 @@ section h4 {
         font-size: 1.5em;
     }
 
-    section h4 {
+    .section h4 {
         font-size: 0.8em
     }
 
     .section section {
         line-height: 130%;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .section {
+        margin: 5em auto auto auto;
+        height: 15vh;
+        max-width: 80%;
+    }
+
+    .section h3 {
+        font-size: 1.5em;
+        margin-left: 1.5em;
+        margin-right: 1.5em;
     }
 }

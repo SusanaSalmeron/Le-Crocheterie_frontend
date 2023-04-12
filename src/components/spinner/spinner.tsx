@@ -3,6 +3,7 @@ import styles from './spinner.module.css';
 import RiseLoader from "react-spinners/RiseLoader";
 
 interface SpinnerProps {
+  size: number
 }
 
 const override: CSSProperties = {
@@ -10,13 +11,13 @@ const override: CSSProperties = {
   margin: "0 auto",
 };
 
-const Spinner: FC<SpinnerProps> = () => {
+const Spinner: FC<SpinnerProps> = (props: SpinnerProps) => {
   return (
     <div className={styles.Spinner} data-testid="spinner">
       <RiseLoader
         cssOverride={override}
         color={"#bb5644"}
-        size={80}
+        size={props.size}
         aria-label="Loading Spinner"
         data-testid="loader"
       />

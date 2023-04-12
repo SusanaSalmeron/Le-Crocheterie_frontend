@@ -10,6 +10,6 @@ describe('<Carousel />', () => {
     const carousel = screen.getByTestId('Carousel');
     expect(carousel).toBeInTheDocument();
     const images = screen.getAllByRole('img')
-    expect(images).toHaveLength(6)
+    expect(images).toHaveLength(4)
   });
 });

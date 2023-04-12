@@ -4,8 +4,26 @@ import '@testing-library/jest-dom/extend-expect';
 import NavbarMenu from './navbarMenu';
 import { BrowserRouter } from 'react-router-dom';
 
+
+Object.defineProperty(window, 'matchMedia', {
+  writable: true,
+  value: jest.fn().mockImplementation(query => ({
+    matches: false,
+    media: query,
+    onchange: null,
+    addListener: jest.fn(),
+    removeListener: jest.fn(),
+    addEventListener: jest.fn(),
+    removeEventListener: jest.fn(),
+    dispatchEvent: jest.fn(),
+  })),
+});
+
+
 describe('<NavbarMenu />', () => {
+  const mockedUseMedia = require('../../hooks/useMedia')
   test('it should mount and show items in menu', async () => {
+    jest.spyOn(mockedUseMedia, 'useMedia').mockResolvedValue(false)
     render(
       <BrowserRouter>
         <NavbarMenu />

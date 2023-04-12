@@ -4,7 +4,6 @@
     padding-top: 1em;
 }
 
-
 .categories {
     display: flex;
     justify-content: space-around;
@@ -100,11 +99,10 @@
     .categories {
         display: grid;
         grid-template-columns: repeat(3, 3fr);
-
     }
 
     .category {
-        margin-top: 3em;
+        margin-top: 1em;
     }
 
     .categories figure {
