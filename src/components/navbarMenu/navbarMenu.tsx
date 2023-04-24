@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './navbarMenu.module.css';
-import useMedia from '../../hooks/useMedia'
+import { useMedia } from '../../hooks/useMedia'
 
 interface NavbarMenuProps { }
 
