@@ -4,6 +4,7 @@ import styles from './contactForm.module.css';
 import { sendContactForm } from '../../services/contactService';
 import { popUpAlert } from '../../services/clientUtils';
 import { ValidationContactForm } from '../../services/validationFormService'
+import NextComponent from "next/component"
 
 interface ContactFormProps { }
 interface InitialValues {
