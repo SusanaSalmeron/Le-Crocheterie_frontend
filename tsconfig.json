@@ -18,10 +18,20 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "preserve",
+    "incremental": true
   },
   "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
     "src",
-    "tests/matchMedia.mock.tsx"
+    "tests/matchMedia.mock.tsx",
+    "src/components",
+    "src/hooks",
+    "src/services"
+  ],
+  "exclude": [
+    "node_modules"
   ]
 }

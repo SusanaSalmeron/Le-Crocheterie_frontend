@@ -1,0 +1,44 @@
+.productList {
+    min-height: 100vh;
+    background-color: #f6e3e8;
+}
+
+.productList h1 {
+    font-family: 'Indie Flower', cursive;
+    font-size: 70px;
+    color: #bb5644;
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    margin-left: 2em
+}
+
+.productList h2 {
+    padding-top: 15em;
+    text-transform: uppercase;
+    color: #bb5644
+}
+
+@media (max-width: 1199.98px) {
+    .productList h1 {
+        font-size: 50px;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .productList h1 {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .productList h1 {
+        font-size: 30px;
+    }
+}
