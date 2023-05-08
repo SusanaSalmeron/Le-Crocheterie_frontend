@@ -36,6 +36,7 @@
     background-color: transparent;
     border: none;
     width: 100%;
+    cursor: pointer;
 }
 
 .categories button img {

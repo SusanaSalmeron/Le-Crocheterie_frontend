@@ -1,5 +1,5 @@
 .productList {
-    min-height: 100vh;
+    min-height: 80vh;
     background-color: #f6e3e8;
 }
 
@@ -22,7 +22,8 @@
 .productList h2 {
     padding-top: 15em;
     text-transform: uppercase;
-    color: #bb5644
+    color: #bb5644;
+    text-align: center;
 }
 
 @media (max-width: 1199.98px) {

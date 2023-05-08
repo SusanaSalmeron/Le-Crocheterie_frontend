@@ -3,17 +3,19 @@ import styles from '../styles/home.module.css';
 import MainLayout from '../components/mainLayout';
 import HomeCarousel from '../components/HomeCarousel';
 import SectionTypes from '../components/SectionTypes';
-/* import { useNavigate } from 'react-router-dom';
- */
+import { useRouter } from 'next/router';
+
+
 interface HomeProps { }
 
 const Home: FC<HomeProps> = () => {
-    /*     const navigate = useNavigate()
-     */
+    const router = useRouter()
+
     const onCategory = (e: any) => {
         const category = e.target.alt
-/*         navigate(`/products/${category}`)
- */    }
+        router.push(`/products/categories/${category}`)
+    }
+
     return (
         <MainLayout>
             <div className={styles.home} data-testid="home">
