@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import styles from '../../styles/productCard.module.css';
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface ProductCardProps {
   id: number,
@@ -21,7 +22,7 @@ const ProductCard: FC<ProductCardProps> = (props: ProductCardProps) => {
       <div className={styles.card}>
         <figure>
           <Link href={`/products/${props.id}/details`}>
-            <img src={`https://d1ccwz5tu7strp.cloudfront.net/${props.id}/main.jpg`} alt={props.name} />
+            <Image src={`https://d1ccwz5tu7strp.cloudfront.net/${props.id}/main.jpg`} alt={props.name} width={100} height={100} />
           </Link>
           <button
             onMouseEnter={onEnter}

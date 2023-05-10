@@ -11,17 +11,24 @@
 }
 
 .item figure {
-    margin: 1em 0 0 3em;
+    margin: 1em 2em 0 3em;
 }
 
 .item img {
-    width: 75%;
+    width: 700px;
+    height: 700px;
+    object-fit: cover;
 }
 
 .details {
     background-color: #f9f0f2;
     width: 50%;
     margin: 1em 2em 0 0;
+}
+
+.details h3,
+.details h4 {
+    text-align: center;
 }
 
 .details h4 {
