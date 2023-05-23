@@ -28,7 +28,7 @@
     "src",
     "tests/matchMedia.mock.tsx",
     "src/components",
-    "src/hooks",
+    "hooks",
     "src/services"
   ],
   "exclude": [

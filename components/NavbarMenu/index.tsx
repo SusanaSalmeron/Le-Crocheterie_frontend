@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import Link from 'next/link';
 import styles from '../../styles/navbarMenu.module.css';
-import { useMedia } from '../../src/hooks/useMedia';
+import { useMedia } from '../../hooks/useMedia';
 import Script from 'next/script';
 
 

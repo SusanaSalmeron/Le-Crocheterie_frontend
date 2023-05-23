@@ -61,9 +61,9 @@ const ContactForm: FC<ContactFormProps> = () => {
                   <label>Subject</label>
                   <Field as="select" name="topic">
                     <option>Choose subject</option>
-                    <option>Order</option>
-                    <option>Support</option>
-                    <option>General</option>
+                    <option value="order">Order</option>
+                    <option value="support">Support</option>
+                    <option value="general">General</option>
                   </Field>
                 </div>
                 <ErrorMessage

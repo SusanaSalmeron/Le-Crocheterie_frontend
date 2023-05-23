@@ -1,9 +1,5 @@
-import { FC, useEffect, useState } from 'react';
+import { FC } from 'react';
 import { getAllProducts } from '../../lib/products';
-import ProductCard from '../(productCard)';
-import MainLayout from '../../components/mainLayout';
-import styles from '../../styles/productList.module.css'
-import Spinner from '../(spinner)';
 import { GetServerSideProps } from 'next';
 import ProductListByCategory from './categories/[category]';
 

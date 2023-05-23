@@ -1,7 +1,5 @@
 import React, { FC } from 'react';
 import { Carousel } from 'react-responsive-carousel'
-import banner1 from '../../public/banner1.png';
-import banner2 from '../../public/banner2.png';
 import Image from 'next/image';
 
 
@@ -18,7 +16,7 @@ const HomeCarousel: FC<HomeCarouselProps> = () => {
         showThumbs={false}>
         <div>
           <Image
-            src={banner1}
+            src="/banner1"
             alt="banner1"
             width={500}
             height={600}
@@ -26,7 +24,7 @@ const HomeCarousel: FC<HomeCarouselProps> = () => {
         </div>
         <div>
           <Image
-            src={banner2}
+            src="/banner2"
             alt="banner2"
             width={500}
             height={600}
