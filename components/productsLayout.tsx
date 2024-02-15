@@ -1,4 +1,4 @@
-import React, { PropsWithChildren } from 'react';
+/* import React, { PropsWithChildren } from 'react';
 import { FC, useEffect, useState } from 'react';
 
 
@@ -12,4 +12,4 @@ const ProductListLayout: FC<ProductListProps> = ({ children }: PropsWithChildren
     )
 };
 
-export default ProductListLayout;
+export default ProductListLayout; */

@@ -1,5 +1,5 @@
-import axios from 'axios';
-import { getAuthHeaders } from './clientUtils';
+import axios from "axios";
+import { getAuthHeaders } from "./clientUtils";
 
 const contactUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/contact`
 

@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-
+"use client"
+import { useEffect, useState } from "react";
 
 export function useMedia(query: string) {
     const [isDesktop, setIsDesktop] = useState(false);
@@ -7,8 +7,8 @@ export function useMedia(query: string) {
         const media = window.matchMedia(query);
         const listener = () => setIsDesktop(media.matches);
         listener();
-        window.addEventListener('resize', listener);
-        return () => window.removeEventListener('resize', listener);
+        window.addEventListener("resize", listener);
+        return () => window.removeEventListener("resize", listener);
     }
     useEffect(() => {
         return a(query)

@@ -1,0 +1,168 @@
+.container {
+    display: flex;
+    background-color: #f9f0f2;
+}
+
+.info {
+    margin-top: 3em;
+    padding-left: 2em;
+    width: 40%;
+}
+
+
+.wrapper {
+    display: flex;
+    width: 60%;
+    flex-direction: column;
+    gap: 0.5rem;
+    border-radius: 0.5rem;
+    background-color: hsl(204 20% 100%);
+    padding: 0.5rem;
+    margin-top: 3em;
+    box-shadow:
+        0 1px 3px 0 rgb(0 0 0 / 0.1),
+        0 1px 2px -1px rgb(0 0 0 / 0.1);
+    background-color: #f9f0f2;
+}
+
+:is(.dark .wrapper) {
+    background-color: hsl(204 3% 18%);
+    box-shadow:
+        0 1px 3px 0 rgb(0 0 0 / 0.25),
+        0 1px 2px -1px rgb(0 0 0 / 0.1);
+}
+
+.tab-list {
+    display: flex;
+    gap: 0.5rem;
+    background-color: #f9f0f2;
+}
+
+.tab {
+    display: flex;
+    height: 2.5rem;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: 0.25rem;
+    border-style: none;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    text-decoration: none;
+    color: hsl(9.1 46.7% 50%)
+}
+
+.tab:hover {
+    background-color: hsl(204 10% 10% / 0.1);
+    color: hsl(9.1 46.7% 50%)
+}
+
+.tab[aria-disabled="true"] {
+    opacity: 0.5;
+}
+
+.tab[aria-selected="true"] {
+    background-color: hsl(9.1 46.7% 50%);
+    color: hsl(204 20% 100%);
+    border: 1px solid #bb5644
+}
+
+.tab:hover[aria-selected="true"] {
+    background-color: hsl(204 20% 100%);
+    color: hsl(9.1 46.7% 50%)
+}
+
+.tab:focus-visible,
+.tab[data-focus-visible] {
+    outline: 2px solid hsl(204 100% 40%);
+    outline-offset: 2px;
+}
+
+:is(.dark .tab:hover) {
+    background-color: hsl(204 20% 100% / 0.1);
+}
+
+:is(.dark .tab[aria-selected="true"]) {
+    background-color: hsl(204 100% 40%);
+    color: hsl(204 20% 100%);
+}
+
+:is(.dark .tab:hover[aria-selected="true"]) {
+    background-color: hsl(204 100% 32%);
+}
+
+.panels {
+    padding: 0.5rem;
+    background-color: #f9f0f2;
+}
+
+.loginForm,
+.registerForm {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 2.3em;
+    height: 56vh;
+}
+
+.registerForm {
+    font-size: 2em;
+    height: 66.6vh;
+}
+
+
+.loginForm input,
+.registerForm input {
+    width: 95%;
+    height: 2.5em;
+}
+
+.userMail {
+    margin-top: 2.5em;
+    margin-bottom: 1em;
+}
+
+.userMail label {
+    margin-bottom: 2em;
+}
+
+.logButton,
+.regButton {
+    cursor: pointer;
+}
+
+.logButton button,
+.regButton button {
+    margin: 3em 0 1em 0;
+    padding: 1em;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 0.5em;
+    background-color: #bb5644;
+    color: white;
+    border: none;
+}
+
+.regButton button {
+    margin: 2em 0 1em 0;
+    font-size: 0.6em;
+}
+
+.logButton button:hover,
+.regButton button:hover {
+    background-color: white;
+    color: #bb5644;
+    border: 1px solid #bb5644
+}
+
+.logButton button:disabled,
+.regButton button:disabled {
+    cursor: not-allowed;
+}
+
+.userName,
+.userLastName,
+.regEmail,
+.regPassword,
+.repeatPassword {
+    margin-bottom: 0.3em;
+}

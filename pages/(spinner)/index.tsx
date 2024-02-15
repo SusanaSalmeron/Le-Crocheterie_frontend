@@ -1,5 +1,5 @@
-import React, { FC, CSSProperties } from 'react';
-import styles from '../../styles/spinner.module.css';
+import React, { FC, CSSProperties } from "react";
+import styles from "../../styles/spinner.module.css";
 import RiseLoader from "react-spinners/RiseLoader";
 
 interface SpinnerProps {

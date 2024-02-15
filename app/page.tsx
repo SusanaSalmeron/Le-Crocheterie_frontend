@@ -1,9 +1,11 @@
-import React, { FC } from 'react';
-import styles from '../styles/home.module.css';
-import MainLayout from '../components/mainLayout';
-import HomeCarousel from '../components/HomeCarousel';
-import SectionTypes from '../components/SectionTypes';
-import { useRouter } from 'next/router';
+"use client";
+
+import React, { FC } from "react";
+import styles from "../styles/home.module.css";
+import MainLayout from "../components/mainLayout";
+import HomeCarousel from "../components/HomeCarousel";
+import SectionTypes from "../components/SectionTypes";
+import { useRouter } from "next/navigation";
 
 
 interface HomeProps { }
@@ -50,6 +52,7 @@ const Home: FC<HomeProps> = () => {
         </MainLayout>
     )
 }
-    ;
+
+
 
 export default Home;

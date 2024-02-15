@@ -1,0 +1,19 @@
+.tab {
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-bottom: none;
+    text-align: center;
+    cursor: pointer;
+}
+
+.tab:hover {
+    background: #f0f0f0;
+}
+
+.tab.selected {
+    border-color: #aaa;
+    border-width: 2px;
+    background: #fff;
+}

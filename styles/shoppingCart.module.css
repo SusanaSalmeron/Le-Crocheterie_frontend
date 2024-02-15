@@ -1,0 +1,23 @@
+.container {
+    background-color: #f9f0f2;
+    min-height: 80.1vh;
+}
+
+.container h1 {
+    margin-bottom: 2em;
+}
+
+.categories {
+    display: grid;
+    grid-template-columns: 1fr 2fr repeat(6, 1fr);
+    margin-bottom: 2em;
+    border-bottom: 1px solid black;
+    text-align: center;
+}
+
+.total {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 4em;
+    font-size: 1.3em;
+}

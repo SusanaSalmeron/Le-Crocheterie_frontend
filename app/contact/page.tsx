@@ -1,10 +1,12 @@
-import React, { FC } from 'react';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
-import styles from '../../styles/contactForm.module.css'
-import { sendContactForm } from '../../lib/contact';
-import { popUpAlert } from '../../lib/clientUtils';
-import { ValidationContactForm } from '../../lib/validationForm';
-import MainLayout from '../../components/mainLayout';
+"use client";
+
+import React, { FC } from "react";
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import styles from "../../styles/contactForm.module.css"
+import { sendContactForm } from "../../lib/contact";
+import { popUpAlert } from "../../lib/clientUtils";
+import { ValidationContactForm } from "../../lib/validationForm";
+import MainLayout from "../../components/mainLayout";
 
 interface ContactFormProps { }
 interface InitialValues {
@@ -45,7 +47,7 @@ const ContactForm: FC<ContactFormProps> = () => {
                 </div>
                 <ErrorMessage
                   className={styles.error}
-                  name='name'
+                  name="name"
                   component="small"
                 />
                 <div className={styles.email}>
@@ -54,7 +56,7 @@ const ContactForm: FC<ContactFormProps> = () => {
                 </div>
                 <ErrorMessage
                   className={styles.error}
-                  name='email'
+                  name="email"
                   component="small"
                 />
                 <div className={styles.topic}>
@@ -68,7 +70,7 @@ const ContactForm: FC<ContactFormProps> = () => {
                 </div>
                 <ErrorMessage
                   className={styles.error}
-                  name='topic'
+                  name="topic"
                   component="small"
                 />
                 <div className={styles.comment}>
@@ -77,7 +79,7 @@ const ContactForm: FC<ContactFormProps> = () => {
                 </div>
                 <ErrorMessage
                   className={styles.error}
-                  name='content'
+                  name="content"
                   component="small"
                 />
                 <div className={styles.button}>

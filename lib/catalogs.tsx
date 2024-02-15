@@ -1,5 +1,5 @@
-import axios from 'axios';
-import { getAuthHeaders } from './clientUtils';
+import axios from "axios";
+import { getAuthHeaders } from "./clientUtils";
 
 const catalogsUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/catalogs`
 
@@ -12,7 +12,7 @@ export async function getCatalogs() {
         if (err.response?.status === 404) {
             catalogs = {}
         } else {
-            console.log('Error when getting catalogs', err.message)
+            console.log("Error when getting catalogs", err.message)
         }
     }
     return catalogs

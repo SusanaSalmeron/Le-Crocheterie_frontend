@@ -1,8 +1,9 @@
-import React, { FC } from 'react';
-import styles from '../../styles/header.module.css';
-import SearchBar from '../SearchBar/index';
-import NavbarMenu from '../NavbarMenu/index';
-import Image from 'next/image';
+import React, { FC } from "react";
+import styles from "../../styles/header.module.css";
+import SearchBar from "../SearchBar/index";
+import NavbarMenu from "../NavbarMenu/index";
+import Image from "next/image";
+import LogRegisterButtons from "../LogRegisterButtons/index";
 
 
 
@@ -16,6 +17,7 @@ const Header: FC<HeaderProps> = () => {
         <Image alt="logo" src="/logo.png" width={150} height={80} />
       </figure>
       <SearchBar />
+      <LogRegisterButtons />
     </header>
   )
 };

@@ -1,0 +1,21 @@
+.buttons button {
+    cursor: pointer;
+    min-width: 10%;
+    margin: 1em 1em 0 0;
+    padding: 0.5em;
+    font-family: 'Indie Flower', cursive;
+    font-size: 22px;
+    background-color: #bb5644;
+    color: white;
+    border: 1px solid white
+}
+
+.buttons button:hover {
+    background-color: white;
+    color: #bb5644;
+    border: 1px solid #bb5644
+}
+
+.buttons button:disabled {
+    cursor: not-allowed;
+}

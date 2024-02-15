@@ -1,7 +1,7 @@
-import React, { FC, FormEvent, useEffect, useState } from 'react';
-import styles from '../../styles/detailsForm.module.css'
-import { Formik, Form, Field } from 'formik';
-import { useRouter } from 'next/router';
+import React, { FC, FormEvent, useEffect, useState } from "react";
+import styles from "../../styles/detailsForm.module.css"
+import { Formik, Form, Field } from "formik";
+import { useRouter } from "next/router";
 
 
 interface DetailsFormProps {
@@ -53,7 +53,7 @@ const DetailsForm: FC<DetailsFormProps> = (props: DetailsFormProps) => {
       <Formik
         initialValues={initialValues}
         onSubmit={() => {
-          router.push('/contact')
+          router.push("/contact")
         }}>
 
         <Form className={styles.form}>

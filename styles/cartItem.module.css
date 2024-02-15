@@ -1,0 +1,36 @@
+.items {
+    display: grid;
+    grid-template-columns: 1fr 2fr repeat(6, 1fr);
+    margin-top: 1em;
+    text-align: center;
+}
+
+.size {
+    text-transform: uppercase;
+}
+
+.changequantity {
+    display: flex;
+    flex-direction: row;
+}
+
+.changequantity button {
+    height: 2em;
+    width: 2em;
+
+}
+
+.changequantity .add {
+    margin-right: 1em;
+    margin-left: 2em
+}
+
+.changequantity .delete {
+    margin-left: 2.5em;
+    margin-right: 1.5em;
+}
+
+.remove {
+    background-color: transparent;
+    border: none;
+}

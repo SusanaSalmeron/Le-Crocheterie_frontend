@@ -19,7 +19,12 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "preserve",
-    "incremental": true
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
   "include": [
     "next-env.d.ts",
@@ -29,7 +34,9 @@
     "tests/matchMedia.mock.tsx",
     "src/components",
     "hooks",
-    "src/services"
+    "src/services",
+    ".next/types/**/*.ts",
+    "app/redux/features/cartManagement.tsx"
   ],
   "exclude": [
     "node_modules"

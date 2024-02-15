@@ -1,5 +1,5 @@
-import axios from 'axios';
-import { getAuthHeaders } from './clientUtils';
+import axios from "axios";
+import { getAuthHeaders } from "./clientUtils";
 
 const productsUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/products`
 
@@ -21,9 +21,10 @@ async function getProductsWith(params: {}) {
         if (err.response?.status === 404) {
             products = []
         } else {
-            console.log('Error when getting products by category ', err.message)
+            console.log("Error when getting products by category ", err.message)
         }
     }
+    console.log(products)
     return products
 }
 
@@ -36,7 +37,7 @@ export async function getProductBy(id: string) {
         if (err.response?.status === 404) {
             product = {}
         } else {
-            console.log('Error when getting product by id', err.message)
+            console.log("Error when getting product by id", err.message)
         }
     }
     return product

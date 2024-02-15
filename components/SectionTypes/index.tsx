@@ -1,6 +1,6 @@
-import React, { FC } from 'react';
-import styles from '../../styles/sectionTypes.module.css';
-import Image from 'next/image';
+import React, { FC } from "react";
+import styles from "../../styles/sectionTypes.module.css";
+import Image from "next/image";
 
 
 interface SectionTypesProps {
@@ -12,12 +12,12 @@ interface Category {
   image: string
 }
 const cats: Category[] = [
-  { name: "animals", image: "/cat1" },
-  { name: "nature", image: "/cat2" },
-  { name: "movies", image: "/cat3" },
-  { name: "people", image: "/cat4" },
-  { name: "fantasy", image: "/cat5" },
-  { name: "misc", image: "/cat6" }
+  { name: "animals", image: "/cat1.png" },
+  { name: "nature", image: "/cat2.png" },
+  { name: "movies", image: "/cat3.png" },
+  { name: "people", image: "/cat4.png" },
+  { name: "fantasy", image: "/cat5.png" },
+  { name: "misc", image: "/cat6.png" }
 ]
 
 const SectionTypes: FC<SectionTypesProps> = (props: SectionTypesProps) => {

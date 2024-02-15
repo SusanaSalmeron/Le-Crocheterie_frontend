@@ -1,7 +1,8 @@
 const nextConfig = {
     images: {
-        domains: ['d1ccwz5tu7strp.cloudfront.net'],
+        domains: ['dk1ny38iy5de8.cloudfront.net'],
     },
 }
 
 module.exports = nextConfig
+

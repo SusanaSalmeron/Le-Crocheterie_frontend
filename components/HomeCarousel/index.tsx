@@ -1,6 +1,6 @@
-import React, { FC } from 'react';
-import { Carousel } from 'react-responsive-carousel'
-import Image from 'next/image';
+import React, { FC } from "react";
+import { Carousel } from "react-responsive-carousel"
+import Image from "next/image";
 
 
 interface HomeCarouselProps { }
@@ -16,18 +16,22 @@ const HomeCarousel: FC<HomeCarouselProps> = () => {
         showThumbs={false}>
         <div>
           <Image
-            src="/banner1"
+            src="/banner1.png"
             alt="banner1"
-            width={500}
-            height={600}
+            width="0"
+            height="0"
+            sizes="100vw"
+            style={{ width: 1100, height: 600 }}
           />
         </div>
         <div>
           <Image
-            src="/banner2"
+            src="/banner2.png"
             alt="banner2"
-            width={500}
-            height={600}
+            width="0"
+            height="0"
+            sizes="100vw"
+            style={{ width: 1100, height: 600 }}
           />
         </div>
       </Carousel>

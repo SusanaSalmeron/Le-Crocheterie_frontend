@@ -1,9 +1,9 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
-import Header from '../components/Header';
+import React from "react";
+import { render, screen } from "@testing-library/react";
+import "@testing-library/jest-dom/extend-expect";
+import Header from "../components/Header";
 
-describe('<Header />', () => {
+describe("<Header />", () => {
   window.matchMedia = window.matchMedia || function () {
     return {
       matches: false,
@@ -11,18 +11,18 @@ describe('<Header />', () => {
       removeListener: function () { }
     };
   };
-  test('it should mount', () => {
+  test("it should mount", () => {
     render(
       <Header />
     );
 
-    const header = screen.getByTestId('Header');
+    const header = screen.getByTestId("Header");
     expect(header).toBeInTheDocument();
-    const menu = screen.getByTestId('NavbarMenu')
+    const menu = screen.getByTestId("NavbarMenu")
     expect(menu).toBeInTheDocument()
     const searchBar = screen.getByTestId("SearchBar")
     expect(searchBar).toBeInTheDocument()
-    const logo = screen.getByRole('img')
-    expect(logo).toHaveAttribute('src', "/_next/image?url=%2Flogo.png&w=384&q=75")
+    const logo = screen.getByRole("img")
+    expect(logo).toHaveAttribute("src", "/_next/image?url=%2Flogo.png&w=384&q=75")
   });
 });
