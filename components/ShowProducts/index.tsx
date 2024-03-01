@@ -4,7 +4,7 @@ import { FC, useEffect, useState } from "react";
 import ProductCard from "../ProductCard"
 import MainLayout from "../mainLayout";
 import styles from "../../styles/showProducts.module.css"
-import Spinner from "../../pages/(spinner)";
+import Spinner from "../spinner";
 
 interface Products {
     id: number,
