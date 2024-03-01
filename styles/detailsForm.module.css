@@ -1,5 +1,5 @@
 .form {
-    width: 70%;
+    width: 75%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -10,38 +10,36 @@
 .form label,
 .total {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.1em;
+}
+
+.color h5,
+.sizes h4 {
     font-size: 1.5em;
+    font-family: 'Indie Flower', cursive;
+    text-align: center;
+    text-decoration: underline;
 }
 
-.color,
-.size,
-.wrapping {
-    text-align: left;
-    margin: 0 0 2em 2em;
+.content {
+    display: grid;
+    grid-template-columns: repeat(3, 2fr);
+    margin: 3em;
+    row-gap: 2em;
 }
 
-.color select,
-.size select {
-    width: 50%;
+
+.content input {
     float: right;
-    background-color: #f6e3e8;
-    font-size: 1em;
-}
-
-.color select option::first-letter {
-    text-transform: uppercase;
-}
-
-.wrapping input {
-    float: right;
+    margin-right: 3em;
     transform: scale(1.5);
-    accent-color: #f6e3e8;
 }
 
 .total {
     display: flex;
     justify-content: center;
-    margin-bottom: 2em;
+    margin: 2em 0;
+    font-size: 1.3em;
 }
 
 .button button {
@@ -49,7 +47,7 @@
     margin: 3em 0 0 8em;
     padding: 1em;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 1.2em;
+    font-size: 1.3em;
     background-color: #bb5644;
     color: white;
     border: none
@@ -59,6 +57,14 @@
     background-color: white;
     color: #bb5644;
     border: 1px solid #bb5644
+}
+
+.button button:disabled {
+    cursor: not-allowed;
+}
+
+.swal2-popup {
+    font-size: 10em !important;
 }
 
 
@@ -73,17 +79,6 @@
     .form label,
     .total {
         font-size: 1.2em;
-    }
-
-    .color select,
-    .size select {
-        font-size: 1em;
-        margin-right: 1em;
-    }
-
-    .wrapping input {
-        margin-right: 1.5em;
-
     }
 
     .button button {

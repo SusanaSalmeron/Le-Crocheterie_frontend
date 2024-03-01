@@ -1,21 +1,32 @@
+.buttons {
+    width: 15%;
+}
+
 .buttons button {
     cursor: pointer;
     min-width: 10%;
-    margin: 1em 1em 0 0;
-    padding: 0.5em;
+    margin: 1.2em 1em 0 0;
     font-family: 'Indie Flower', cursive;
-    font-size: 22px;
-    background-color: #bb5644;
-    color: white;
-    border: 1px solid white
+    font-size: 26px;
+    color: #bb5644;
+    border: none;
+    background-color: transparent;
 }
 
 .buttons button:hover {
-    background-color: white;
-    color: #bb5644;
-    border: 1px solid #bb5644
+    border-bottom: 4px solid #bb5644;
 }
 
 .buttons button:disabled {
     cursor: not-allowed;
+}
+
+.buttons span {
+    font-size: 0.6em;
+    margin-left: -0.4em;
+    border: 1px solid #bb5644;
+    border-radius: 50%;
+    padding: 0.1em 0.3em;
+    color: white;
+    background-color: #bb5644;
 }

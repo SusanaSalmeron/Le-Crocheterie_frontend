@@ -1,10 +1,12 @@
 "use client"
 
-import { FC, useState } from "react";
+import { FC, useEffect } from "react";
 import MainLayout from "../../components/mainLayout";
 import style from '../../styles/shoppingCart.module.css';
 import CartItem from "../../components/CartItem";
 import { useCartStore } from "../store/useCartStore";
+import CartTotal from "../../components/CartTotal";
+import Link from "next/link";
 
 
 
@@ -12,18 +14,29 @@ interface ShoppingCartProps { }
 
 const ShoppingCart: FC<ShoppingCartProps> = () => {
     const cart = useCartStore(state => state.cart)
+    const addWrappingCost = useCartStore(state => state.addWrappingCost)
+    const removeWrapCost = useCartStore(state => state.removeWrappingCost)
     const totalItemsInCart = useCartStore(state => state.totalItems)
-    const totalAmountInCart = useCartStore(state => state.totalPrice)
-    const giftWrap: number = 5
-    const [checked, setchecked] = useState<boolean>(false)
-    console.log(cart)
 
+    const addWrappingPrice = (e: any) => {
+        if (e.target.checked) {
+            addWrappingCost(cart)
+        } else {
+            removeWrapCost(cart)
+        }
+    }
+
+    useEffect(() => {
+        if (cart.length === 0) {
+            removeWrapCost(cart)
+        }
+    }, [cart])
 
     return (
         <MainLayout>
             {!cart.length ? <h3>Your cart is empty</h3> :
                 <div className={style.container}>
-                    <h1>My Shopping Bag</h1>
+                    <h1>Your Cart: ({totalItemsInCart} {totalItemsInCart === 1 ? "item" : "items"})</h1>
                     <div className={style.categories}>
                         <div>PRODUCT</div>
                         <div>NAME</div>
@@ -38,19 +51,19 @@ const ShoppingCart: FC<ShoppingCartProps> = () => {
                             key={product.id.toString() + product.color + product.size} product={product}
                         />
                     ))}
-
-                    <div className={style.total}>
-                        <div>TOTAL ITEMS:  {totalItemsInCart}
-                        </div>
-                        <div>TOTAL AMOUNT:  {totalAmountInCart} €
-                        </div>
+                    <div className={style.wrapping}>
+                        <label>
+                            Do you want to wrap your order as a gift?
+                            <input type="checkbox" name="toggle" onClick={addWrappingPrice} />
+                        </label>
                     </div>
-
+                    <CartTotal />
+                    <div className={style.next}>
+                        <Link href="" type="submit">NEXT</Link>
+                    </div>
                 </div>}
-
         </MainLayout>
     )
-
 }
 
 

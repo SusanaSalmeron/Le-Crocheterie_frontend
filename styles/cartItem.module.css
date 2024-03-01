@@ -3,6 +3,7 @@
     grid-template-columns: 1fr 2fr repeat(6, 1fr);
     margin-top: 1em;
     text-align: center;
+    font-size: 1.2em;
 }
 
 .size {
@@ -17,17 +18,23 @@
 .changequantity button {
     height: 2em;
     width: 2em;
-
+    border: 0.6px solid grey;
+    background-color: transparent;
 }
 
 .changequantity .add {
-    margin-right: 1em;
-    margin-left: 2em
+    margin-left: 1em;
+    padding: 0 0.1em 0.1em 0;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
 }
 
 .changequantity .delete {
-    margin-left: 2.5em;
-    margin-right: 1.5em;
+    margin-left: 3.3em;
+    margin-right: 1em;
+    padding: 0 0 0.1em 0.1em;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
 }
 
 .remove {

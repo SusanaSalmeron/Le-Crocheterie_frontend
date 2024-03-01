@@ -1,0 +1,76 @@
+.total {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    font-size: 1.3em;
+    border-top: 1px solid black;
+    padding: 1em 0;
+}
+
+.items {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+}
+
+.subtotal {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    text-align: right;
+    width: 85%;
+}
+
+.shipping {
+    grid-row-start: 2;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    font-size: 0.8em;
+    text-align: right;
+    width: 85%;
+}
+
+.shipping span {
+    font-size: 1.3em;
+    color: #bb5644;
+}
+
+.gift {
+    grid-row-start: 3;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    font-size: 0.8em;
+    text-align: right;
+    width: 85%;
+}
+
+.amount {
+    grid-row-start: 5;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    text-align: right;
+    margin-right: 2em;
+    text-align: right;
+    width: 85%;
+
+}
+
+.info {
+    grid-row-start: 6;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    border: 1px solid black;
+    text-align: center;
+    max-width: 80%;
+    margin-left: 2em;
+}
+
+.total span {
+    margin-left: 0.5em;
+    font-size: 1.3em;
+    color: #bb5644;
+}
+
+.info span {
+    font-size: 1.3em;
+    color: #bb5644;
+}

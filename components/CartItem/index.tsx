@@ -36,13 +36,13 @@ const CartItem: FC<ProductCartProps> = (props: ProductCartProps) => {
                     onClick={() => decreaseQuantity(props.product.quantity)}
                 >-
                 </button>
-                <p>{props.product.quantity}</p>
+                <p className={style.qty}>{props.product.quantity}</p>
                 <button className={style.add}
                     onClick={() => incrementQuantity(props.product)}
                 >+
                 </button>
             </div>
-            <p>{props.product.price * props.product.quantity} €</p>
+            <p className={style.total}>{props.product.price * props.product.quantity} €</p>
             <div>
                 <button onClick={() => removeFromCart(props.product)} className={style.remove}>
                     <i className="fa-solid fa-trash"></i>

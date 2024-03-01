@@ -3,6 +3,7 @@ import Link from "next/link";
 import styles from "../../styles/navbarMenu.module.css";
 import { useMedia } from "../../lib/useMedia";
 import Script from "next/script";
+import { useCartStore } from "../../app/store/useCartStore";
 
 
 
@@ -26,14 +27,6 @@ const NavbarMenu: FC<NavbarMenuProps> = () => {
             </li>
             <li>
               <Link href="home">about</Link>
-            </li>
-            {!isMobile ? <li>
-              <Link href="/contact">contact</Link>
-            </li> : null}
-            <li>
-              <Link href="/cart">
-                <i className="fa-solid fa-cart-shopping" />
-              </Link>
             </li>
           </ul>
         </div>

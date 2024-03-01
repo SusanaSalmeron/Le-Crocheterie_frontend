@@ -1,10 +1,15 @@
 .container {
     background-color: #f9f0f2;
     min-height: 80.1vh;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .container h1 {
+    padding-top: 1em;
     margin-bottom: 2em;
+    text-align: center;
+    font-family: 'Indie Flower', cursive;
+    color: #bb5644;
 }
 
 .categories {
@@ -13,11 +18,39 @@
     margin-bottom: 2em;
     border-bottom: 1px solid black;
     text-align: center;
+    font-size: 1.3em;
 }
 
-.total {
+.wrapping {
+    font-size: 1.2em;
+    margin: 3em 0 1.5em 2em;
+}
+
+.wrapping input {
+    margin-left: 4em;
+    transform: scale(1.5);
+}
+
+.next {
     display: flex;
-    justify-content: space-around;
-    margin-top: 4em;
-    font-size: 1.3em;
+    flex-direction: row-reverse;
+}
+
+.next a {
+    width: 10%;
+    margin: 0 2em 1em 0;
+    padding: 1em;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.2em;
+    background-color: #bb5644;
+    color: white;
+    border: none;
+    text-decoration: none;
+    text-align: center;
+}
+
+.next a:hover {
+    background-color: white;
+    color: #bb5644;
+    border: 1px solid #bb5644
 }

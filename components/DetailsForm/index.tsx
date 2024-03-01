@@ -1,11 +1,12 @@
 'use client'
-import React, { FC, FormEvent, useEffect, useState } from "react";
+import React, { FC, FormEvent, useState } from "react";
 import styles from "../../styles/detailsForm.module.css"
-import { Formik, Form, Field } from "formik";
-import { useRouter } from "next/navigation";
+import { Formik, Form, Field, FieldArray } from "formik";
 import { useCartStore } from "../../app/store/useCartStore";
 import { Product } from "../../app/store/useCartStore";
-
+import Swal from 'sweetalert2';
+import ValidationForDetailsForm from "../../lib/validationDetailsForm";
+import { MenuItem, Select } from "@ariakit/react";
 
 
 interface DetailsFormProps {
@@ -47,85 +48,107 @@ const DetailsForm: FC<DetailsFormProps> = (props: DetailsFormProps) => {
         initialValues.price = price
     }
 
+    const colorSelected = (e: FormEvent<HTMLInputElement>): void => {
+        const currentColor: any = e.currentTarget.value
+        initialValues.colors = currentColor
+    }
 
-
-    /* const product = {
-        id: props.id,
-        colors: props.colors,
-        catalogs: props.catalogs,
-        price: price,
-        size: initialValues.sizes,
-        quantity: 1
-    } */
-
-    /* const addWrappingPrice = (e: any) => {
-        if (e.currentTarget.value) {
-            setchecked(!checked)
-        }
-    } */
-
-    const submitProductToCart = (e: any) => {
-        const id = props.id.toString() + e.colors[0] + e.sizes[0]
+    const submitProductToCart = (e: any, actions: any) => {
+        const id = props.id.toString() + e.colors + e.sizes
         const product: Product = {
             id: Buffer.from(id).toString('base64'),
             image: productImage,
             productName: props.productName,
-            color: e.colors[0],
+            color: e.colors,
             price: price,
-            size: e.sizes[0],
+            size: e.sizes,
             quantity: 1
         }
         addToCart(product)
-        alert("producto añadido al carrito")
+        Swal.fire({
+            position: "center",
+            width: "auto",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (alert) => {
+                alert.onmouseenter = Swal.stopTimer;
+                alert.onmouseleave = Swal.resumeTimer;
+            },
+            icon: "success",
+            title: "Product has been added successfully",
+            background: "#f9f0f2",
+            color: "#bb5644",
+        });
+        initialValues.colors = [""]
     }
 
     return (
         <div className={styles.DetailsForm} data-testid="detailsForm">
             <Formik
                 initialValues={initialValues}
-                onSubmit={submitProductToCart}>
-                <Form className={styles.form}>
-                    <div className={styles.color}>
-                        <label>Main color</label>
-                        <Field as="select" name="colors" multiple>
-                            <option >Choose color</option>
-                            {props.colors.map((color, i) => {
-                                return <option key={i} value={color} >{color.toUpperCase()}</option>
-                            })}
-                        </Field>
-                    </div>
-                    <div className={styles.size}>
-                        <label>Size</label>
-                        <Field as="select" name="sizes" onChange={changePrice} multiple={true}>
-                            <option >Choose size</option>
-                            {Object.keys(props.catalogs.sizes).map((size, i) => {
-                                return <option key={i} value={size}>{size.toUpperCase()} </option>
-                            }).reverse()}
-                        </Field>
-                    </div>
+                onSubmit={(submitProductToCart)}
+                validationSchema={ValidationForDetailsForm}
+            >
+                {
+                    ({ isSubmitting, dirty, isValid }) =>
+                        <Form className={styles.form}>
+                            <div className={styles.color}>
+                                {/* <Field name="colors" component="select">
+                                    {props.colors.map((color, i) => {
+                                        return <option value={color}>{color}</option>
+                                    })}
+                                </Field> */}
 
-                    {/* TRANSLADATE THIS TO CART */}
-                    {/* <div className={styles.wrapping}>
-                        <label>
-                            Gift Wraping
-                            <Field type="checkbox" name="toggle" onClick={addWrappingPrice} />
-                        </label>
-                    </div>*/}
-                    <div className={styles.total}>
-                        <p>Price</p>
-                        {/* <p>{checked ? price + giftWrap : price} €</p> */}
-                        <p>{price} €</p>
-                    </div>
-                    <div>
-                        <p>This form is only for info purpose. If you want to order or ask something, please click contact button below</p>
-                    </div>
-                    <div className={styles.button}>
-                        <button
-                            type="submit">
-                            Add to cart
-                        </button>
-                    </div>
-                </Form>
+                                <div id="colorRadioGroup">
+                                    <h5>Choose Main Color</h5>
+                                </div>
+                                <div role="group"
+                                    className={styles.content}>
+                                    {props.colors.map((color, i) => {
+                                        return <div key={i}>
+                                            <label>{color.toUpperCase()}</label>
+                                            <Field
+                                                type="radio" name="colors" value={color}
+                                                onClick={colorSelected}
+                                            />
+                                        </div>
+                                    })}
+                                </div>
+                            </div>
+                            <div className={styles.sizes}>
+                                <div id="sizesRadioGroup">
+                                    <h5 className={styles.title}>Choose Size</h5>
+                                </div>
+                                <div role="group" className={styles.content}>
+                                    {Object.keys(props.catalogs.sizes).map((size, i) => {
+                                        return <div key={i}>
+                                            <label>{size.toUpperCase()}</label>
+                                            <Field
+                                                type="radio"
+                                                name="sizes"
+                                                value={size}
+                                                onClick={changePrice}
+                                            />
+                                        </div>
+                                    }).reverse()}
+                                </div>
+                            </div>
+
+                            <div className={styles.total}>
+                                <p>Price</p>
+                                <p>{price} €</p>
+                            </div>
+                            <div className={styles.button}>
+                                <button
+                                    type="submit"
+                                    disabled={!dirty || !isValid || isSubmitting}
+                                >
+                                    Add to cart
+                                </button>
+                            </div>
+                        </Form>
+                }
             </Formik>
         </div>
     )

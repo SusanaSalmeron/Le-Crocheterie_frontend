@@ -12,7 +12,6 @@ interface ProductCardProps {
 
 const ProductCard: FC<ProductCardProps> = (props: ProductCardProps) => {
     const onEnter = async (e: any) => {
-        console.log(e.target)
         e.target.children[0].className = "fa-solid fa-heart"
     }
     const onLeave = async (e: any) => {
