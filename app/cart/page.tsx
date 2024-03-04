@@ -7,6 +7,7 @@ import CartItem from "../../components/CartItem";
 import { useCartStore } from "../store/useCartStore";
 import CartTotal from "../../components/CartTotal";
 import Link from "next/link";
+import EmptyCart from "../emptyCart/page";
 
 
 
@@ -34,7 +35,7 @@ const ShoppingCart: FC<ShoppingCartProps> = () => {
 
     return (
         <MainLayout>
-            {!cart.length ? <h3>Your cart is empty</h3> :
+            {!cart.length ? <EmptyCart /> :
                 <div className={style.container}>
                     <h1>Your Cart: ({totalItemsInCart} {totalItemsInCart === 1 ? "item" : "items"})</h1>
                     <div className={style.categories}>

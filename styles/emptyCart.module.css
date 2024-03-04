@@ -1,0 +1,15 @@
+.container {
+    height: 81vh;
+    background-color: #f9f0f2;
+}
+
+.message {
+    text-align: center;
+    font-size: x-large;
+    font-family: 'Indie Flower', cursive;
+}
+
+.image {
+    display: flex;
+    justify-content: center;
+}
