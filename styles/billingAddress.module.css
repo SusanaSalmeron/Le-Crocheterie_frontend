@@ -1,0 +1,33 @@
+.billing {
+    margin-bottom: 2em;
+    width: 100%;
+    background-color: white;
+    padding: 1em;
+    border: solid 0.5px grey;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.billing h4,
+.billing p {
+    font-size: 1.3em;
+}
+
+.billing button {
+    width: 10%;
+    margin-top: 1em;
+    padding: 0.5em;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.2em;
+    background-color: #bb5644;
+    border: 1px solid #bb5644;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+}
+
+.billing button:hover {
+    background-color: white;
+    color: #bb5644;
+
+}

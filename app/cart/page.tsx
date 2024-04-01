@@ -60,7 +60,7 @@ const ShoppingCart: FC<ShoppingCartProps> = () => {
                     </div>
                     <CartTotal />
                     <div className={style.next}>
-                        <Link href="" type="submit">NEXT</Link>
+                        <Link href="/cartNextStep">NEXT</Link>
                     </div>
                 </div>}
         </MainLayout>

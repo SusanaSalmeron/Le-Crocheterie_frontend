@@ -1,0 +1,48 @@
+.container {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.code,
+.payment {
+    width: 100%;
+    background-color: white;
+    padding: 1em;
+    border: solid 0.5px grey;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.code {
+    margin-bottom: 2em;
+    font-size: 1.2em;
+}
+
+.payment h4 {
+    margin-bottom: 1em;
+    font-size: 1.3em;
+}
+
+.code input {
+    margin-left: 6em;
+    width: 60%;
+    height: 2em
+}
+
+.payment .paypal,
+.payment .card {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    border: solid 0.5px grey;
+    background-color: white;
+    height: 4em;
+    cursor: pointer
+}
+
+.payment .card img {
+    margin-top: 0.4em;
+}
+
+.payment .paypal:hover,
+.payment .card:hover {
+    background-color: rgb(237, 235, 235);
+}

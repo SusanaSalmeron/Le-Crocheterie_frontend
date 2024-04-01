@@ -1,0 +1,31 @@
+.shipping {
+    margin-bottom: 2em;
+    width: 100%;
+    background-color: white;
+    padding: 1em;
+    border: solid 0.5px grey;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.shipping h4,
+.shipping p {
+    font-size: 1.3em;
+}
+
+.shipping button {
+    width: 10%;
+    margin-top: 1em;
+    padding: 0.5em;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.2em;
+    background-color: #bb5644;
+    color: white;
+    border: 1px solid #bb5644;
+    text-align: center;
+    cursor: pointer;
+}
+
+.shipping button:hover {
+    background-color: white;
+    color: #bb5644;
+}

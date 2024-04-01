@@ -1,0 +1,19 @@
+.container {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    padding: 1em;
+    background-color: #f9f0f2;
+    column-gap: 1em
+}
+
+.addresses {
+    grid-column-start: 1;
+    grid-column-end: 5;
+}
+
+.summary {
+    grid-column-start: 5;
+    grid-column-end: 7;
+
+}
